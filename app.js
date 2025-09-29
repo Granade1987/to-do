@@ -203,19 +203,36 @@ function importTicketsFromCSV(file) {
 
         const tickets = [];
         for (let i = 1; i < lines.length; i++) {
-            const cols = lines[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
-            if (!cols || cols.length < 5) continue;
+            // Gebruik een echte CSV parser voor correcte splitsing
+            const cols = [];
+            let inQuotes = false, value = '', line = lines[i];
+            for (let j = 0; j < line.length; j++) {
+                const char = line[j];
+                if (char === '"' && line[j + 1] === '"') {
+                    value += '"';
+                    j++;
+                } else if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    cols.push(value);
+                    value = '';
+                } else {
+                    value += char;
+                }
+            }
+            cols.push(value);
+
+            if (cols.length < 5) continue;
             tickets.push({
-                id: Date.now() + i, // unieke id
-                title: cols[0].replace(/^"|"$/g, '').replace(/""/g, '"'),
-                description: cols[1].replace(/^"|"$/g, '').replace(/""/g, '"'),
-                status: cols[2].replace(/^"|"$/g, ''),
-                created_at: cols[3].replace(/^"|"$/g, ''),
-                closed_at: cols[4].replace(/^"|"$/g, '') || null
+                id: Date.now() + i,
+                title: cols[0],
+                description: cols[1],
+                status: cols[2],
+                created_at: cols[3],
+                closed_at: cols[4] || null
             });
         }
         if (!tickets.length) return alert('Geen geldige tickets gevonden.');
-        // Voeg toe aan bestaande tickets
         let existing = JSON.parse(localStorage.getItem('tickets') || '[]');
         localStorage.setItem('tickets', JSON.stringify([...existing, ...tickets]));
         loadTickets();
