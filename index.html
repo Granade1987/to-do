@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>To-Do</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="https://mikesjustformen.nl/wp-content/uploads/2022/02/Mikes-just-for-men-Logo-wit.svg">
+</head>
+<body>
+<div class="container">
+    <div class="header-row">
+        <img src="https://mikesjustformen.nl/wp-content/uploads/2022/02/Mikes-just-for-men-Logo-wit.svg" 
+             alt="Mikes Just For Men Logo" 
+             class="logo-header">
+        <h1>To-Do</h1>
+    </div>
+    
+    <!-- Filters -->
+    <div class="filters-bulk-row">
+        <div class="bulk-actions-inline">
+            <button id="createTicketBtn" class="btn btn-primary">Nieuw Ticket</button>
+        </div>
+        <div class="filters-inline">
+            <label>Status filter:
+                <select id="statusFilter">
+                    <option value="Alle">Alle</option>
+                    <option value="Open">Open</option>
+                    <option value="In behandeling">In behandeling</option>
+                    <option value="Gesloten">Gesloten</option>
+                </select>
+            </label>
+            <label>Sorteer op:
+                <select id="sortFilter">
+                    <option value="created_at">Nieuwste eerst</option>
+                    <option value="status" selected>Status</option>
+                </select>
+            </label>
+        </div>
+    </div>
+
+    <!-- Tickets tabel -->
+    <div class="ticket-list-container">
+        <table id="ticketTable">
+            <thead>
+                <tr>
+                    <th>Titel</th>
+                    <th>Beschrijving</th>
+                    <th>Status</th>
+                    <th>Aangemaakt</th>
+                    <th>Gesloten op</th>
+                </tr>
+            </thead>
+            <tbody id="ticketList"></tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal voor ticket details -->
+<div id="ticketModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <h2>Ticket Details</h2>
+        <input type="hidden" id="modalTicketId">
+        <div class="modal-field">
+            <label class="modal-label">Titel:</label>
+            <input type="text" id="modalTitle" class="modal-input" placeholder="Titel">
+        </div>
+        <div class="modal-field">
+            <label class="modal-label">Beschrijving:</label>
+            <textarea id="modalDescription" class="modal-input" placeholder="Beschrijving"></textarea>
+        </div>
+        <div class="modal-field">
+            <label class="modal-label">Status:</label>
+            <select id="modalStatus" class="modal-status-select">
+                <option value="Open">Open</option>
+                <option value="In behandeling">In behandeling</option>
+                <option value="Gesloten">Gesloten</option>
+            </select>
+        </div>
+        <div class="modal-field">
+            <label class="modal-label">Aangemaakt op:</label>
+            <div id="modalCreated" class="modal-value"></div>
+        </div>
+        <div class="modal-field">
+            <label class="modal-label">Gesloten op:</label>
+            <div id="modalClosed" class="modal-value"></div>
+        </div>
+        <div class="modal-actions">
+            <button id="modalSaveBtn" class="btn btn-primary" onclick="updateStatusFromModal()">Opslaan</button>
+            <button id="modalCloseBtn" class="btn btn-secondary" onclick="closeModal()">Sluiten</button>
+            <span id="modalDeleteBtn" class="modal-delete-link" onclick="deleteTicketFromModal()">Verwijder ticket</span>
+        </div>
+    </div>
+</div>
+
+<!-- Modal voor nieuw ticket -->
+<div id="createTicketModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="modal-close" onclick="closeCreateModal()">&times;</span>
+        <h2>Nieuw Ticket</h2>
+        <div class="modal-field">
+            <label class="modal-label">Titel:</label>
+            <input id="newTicketTitle" type="text" placeholder="Titel" class="modal-input">
+        </div>
+        <div class="modal-field">
+            <label class="modal-label">Beschrijving:</label>
+            <textarea id="newTicketDescription" placeholder="Beschrijving" class="modal-input"></textarea>
+        </div>
+        <div class="modal-field">
+            <label for="newTicketStatus" class="modal-label">Status</label>
+            <select id="newTicketStatus" class="modal-status-select">
+                <option value="Open">Open</option>
+                <option value="In behandeling">In behandeling</option>
+                <option value="Gesloten">Gesloten</option>
+            </select>
+        </div>
+        <div class="modal-actions">
+            <button onclick="saveNewTicket()" class="btn btn-primary">Ticket Aanmaken</button>
+            <button onclick="closeCreateModal()" class="btn btn-secondary">Annuleren</button>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

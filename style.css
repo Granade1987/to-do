@@ -1,0 +1,487 @@
+/* --- DESIGN SYSTEM & VARIABELEN --- */
+:root {
+    --color-primary: #007bff; /* Een heldere, moderne blauw */
+    --color-primary-hover: #0056b3;
+    --color-danger: #dc3545;
+    --color-danger-hover: #c82333;
+    --color-warning-bg: #fff3cd;
+    --color-warning-border: #ff9800;
+    --color-success-bg: #e9f7ef; /* Lichte achtergrond voor gesloten tickets */
+    --color-success-border: #28a745;
+    
+    --color-text: #020202;
+    --color-text-secondary: #6c757d;
+    --color-bg: #f8f9fa;
+    --color-surface: #ffffff; /* Kleur van panelen/kaarten */
+    --color-border: #dee2e6;
+    
+    --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --border-radius: 8px;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --transition: all 0.2s ease-in-out;
+}
+
+/* --- ALGEMENE STIJLEN --- */
+body {
+    background: #f8f9fa;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #444;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.04);
+    padding: 32px 32px 24px 32px;
+}
+
+.header-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    min-height: 120px;
+    position: relative;
+}
+
+.logo-header {
+    max-width: 180px;
+    height: auto;
+    display: block;
+    margin: 0;
+    filter: brightness(0) invert(0);
+}
+
+.header-row h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    color: #222;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 10px;
+}
+
+/* --- PANELEN EN KAARTEN --- */
+.panel {
+    background-color: var(--color-surface);
+    padding: 25px 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 25px;
+    border: 1px solid var(--color-border);
+}
+/* Pas dit toe op je HTML voor een consistente look */
+.new-ticket, .ticket-list-container, .filters, .bulk-actions {
+    background-color: var(--color-surface);
+    padding: 25px 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 25px;
+    border: 1px solid var(--color-border);
+}
+
+/* --- FORMULIEREN --- */
+.new-ticket-form {
+    display: grid;
+    gap: 15px;
+}
+.new-ticket-form input, .new-ticket-form textarea {
+    width: 100%; box-sizing: border-box;
+}
+
+input[type="text"], select, textarea {
+    border: 1px solid #cfd8dc;
+    border-radius: 6px;
+    padding: 11px 14px;
+    font-size: 15px;
+    font-family: var(--font-family);
+    background: #f9fbfd;
+    outline: none;
+    transition: border 0.18s, box-shadow 0.18s;
+}
+
+input[type="text"]:focus, select:focus, textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.10);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* --- KNOPPEN (Buttons) --- */
+.btn {
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: #fff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+    color: #fff;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: #fff;
+    border: none;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+    color: #fff;
+}
+
+.btn-secondary {
+    background: #f6f7f9;
+    color: #444;
+    border: 1px solid #d1d5db;
+}
+
+.btn-secondary:hover {
+    background: #e9ecef;
+}
+
+.btn-small {
+    padding: 7px 14px;
+    font-size: 14px;
+    border-radius: 4px;
+    height: auto;
+}
+
+.btn-muted {
+    background: #f6f7f9;
+    color: #888;
+    border: 1px solid #d1d5db;
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: none;
+    transition: background 0.18s, color 0.18s, opacity 0.18s;
+}
+
+.btn-muted.active {
+    background: #e9ecef;
+    color: #444;
+    border-color: #b5b9bd;
+    opacity: 1;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.btn-muted:hover.active {
+    background: #dee2e6;
+    color: #222;
+}
+
+/* --- FILTERS & ACTIES --- */
+.filters, .bulk-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Nieuwe gecombineerde rij voor filters en bulk acties */
+.filters-bulk-row {
+    background: #f8fafc;
+    border: 1px solid #e3e8ee;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    padding: 18px 28px;
+    border-radius: 10px;
+    margin-bottom: 28px;
+    gap: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.bulk-actions-inline {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.filters-inline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filters-inline label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    color: #444;
+    font-size: 15px;
+}
+
+/* --- TABEL --- */
+.ticket-list-container {
+    padding: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+th, td {
+    font-size: 15px;
+    padding: 18px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+    color: #444;
+}
+
+th {
+    background: #f6f7f9;
+    font-weight: 600;
+    color: #222;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+tr {
+    transition: background 0.15s;
+}
+
+tr:hover {
+    background: #f0f4fa;
+}
+
+/* Status kleuren */
+tbody tr.in-behandeling {
+    background-color: #fff7e6 !important; /* oranje tint */
+}
+tbody tr.in-behandeling td:first-child {
+    border-left: 4px solid #ff9800 !important; /* oranje rand */
+}
+tbody tr.in-behandeling td:not(:first-child) {
+    border-left: none;
+}
+
+tbody tr.gesloten {
+    background-color: #eafaf1 !important; /* groen tint */
+}
+tbody tr.gesloten td:first-child {
+    border-left: 4px solid #34c759 !important; /* groen rand */
+}
+tbody tr.gesloten td:not(:first-child) {
+    border-left: none;
+}
+
+tbody tr.open {
+    background-color: #fff !important;
+}
+tbody tr.open td:first-child {
+    border-left: 4px solid #1976d2 !important; /* blauw rand */
+}
+tbody tr.open td:not(:first-child) {
+    border-left: none;
+}
+
+/* Modals */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.10);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.modal-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px 28px;
+    max-width: 480px;
+    margin: 40px auto;
+    box-shadow: 0 2px 24px 0 rgba(0,0,0,0.10);
+    position: relative;
+}
+.modal-close {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    font-size: 22px;
+    color: #888;
+    cursor: pointer;
+}
+.modal-field {
+    margin-bottom: 18px;
+}
+.modal-label {
+    font-weight: 500;
+    margin-bottom: 4px;
+    display: block;
+    color: #222;
+}
+.modal-value {
+    display: block;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    font-size: 16px;
+    color: #333;
+    letter-spacing: 0.2px;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+.modal-input,
+.modal-status-select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 15px;
+    margin-bottom: 18px;
+    background: #fff;
+    color: #222;
+    box-sizing: border-box;
+}
+.modal-input:focus,
+.modal-status-select:focus {
+    outline: 2px solid #1976d2;
+    border-color: #1976d2;
+}
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+.modal-actions .btn {
+    flex: 1;
+}
+.modal-delete-link {
+    color: #dc3545;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: auto;
+    padding: 8px 0;
+    transition: color 0.18s;
+    text-decoration: underline;
+    border: none;
+    background: none;
+    display: inline-block;
+}
+.modal-delete-link:hover {
+    color: #a71d2a;
+    text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s;
+}
+.btn:hover {
+    background: #1253a4;
+}
+.btn-secondary {
+    background: #f6f7f9;
+    color: #444;
+    border: 1px solid #d1d5db;
+}
+.btn-secondary:hover {
+    background: #e9ecef;
+}
+.btn-small {
+    padding: 7px 14px;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .container {
+        padding: 10px !important;
+    }
+    .header-row h1 {
+        font-size: 22px;
+    }
+    th, td {
+        font-size: 13px;
+        padding: 10px 6px;
+    }
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+    .modal-actions {
+        flex-direction: column;
+    }
+}
+@media (max-width: 600px) {
+    .container, .modal-content {
+        padding: 8px !important;
+    }
+    .header-row {
+        flex-direction: column;
+        min-height: unset;
+        gap: 10px;
+    }
+    .logo-header {
+        max-width: 120px;
+    }
+    .header-row h1 {
+        position: static;
+        transform: none;
+        font-size: 18px;
+        margin-top: 8px;
+    }
+}
+
+/* Specifieke stijlen voor modal velden */
+#newTicketTitle,
+#newTicketDescription,
+#modalTitle,
+#modalDescription {
+    background: #fff !important;
+}
