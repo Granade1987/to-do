@@ -19,6 +19,11 @@
     <div class="filters-bulk-row">
         <div class="bulk-actions-inline">
             <button id="createTicketBtn" class="btn btn-primary">Nieuw Ticket</button>
+            <button id="exportCsvBtn" class="btn btn-secondary">Exporteren naar CSV</button>
+            <label class="btn btn-secondary" style="margin-left:10px; cursor:pointer;">
+                Importeren CSV
+                <input id="importCsvInput" type="file" accept=".csv" style="display:none;">
+            </label>
         </div>
         <div class="filters-inline">
             <label>Status filter:

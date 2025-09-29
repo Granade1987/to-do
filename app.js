@@ -165,10 +165,76 @@ window.onclick = function(event) {
     if (event.target === createModal) closeCreateModal();
 };
 
+// Exporteren naar CSV
+function exportTicketsToCSV() {
+    let tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
+    if (!tickets.length) return alert('Geen tickets om te exporteren.');
+
+    const header = ['Titel', 'Beschrijving', 'Status', 'Aangemaakt', 'Gesloten'];
+    const rows = tickets.map(t =>
+        [
+            `"${(t.title || '').replace(/"/g, '""')}"`,
+            `"${(t.description || '').replace(/"/g, '""')}"`,
+            `"${t.status}"`,
+            `"${t.created_at}"`,
+            `"${t.closed_at || ''}"`
+        ].join(',')
+    );
+    const csvContent = [header.join(','), ...rows].join('\r\n');
+
+    const blob = new Blob([csvContent], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'tickets.csv';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
+// Importeren vanuit CSV
+function importTicketsFromCSV(file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const text = e.target.result;
+        const lines = text.split(/\r?\n/).filter(Boolean);
+        if (lines.length < 2) return alert('Geen geldige CSV.');
+
+        const tickets = [];
+        for (let i = 1; i < lines.length; i++) {
+            const cols = lines[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
+            if (!cols || cols.length < 5) continue;
+            tickets.push({
+                id: Date.now() + i, // unieke id
+                title: cols[0].replace(/^"|"$/g, '').replace(/""/g, '"'),
+                description: cols[1].replace(/^"|"$/g, '').replace(/""/g, '"'),
+                status: cols[2].replace(/^"|"$/g, ''),
+                created_at: cols[3].replace(/^"|"$/g, ''),
+                closed_at: cols[4].replace(/^"|"$/g, '') || null
+            });
+        }
+        if (!tickets.length) return alert('Geen geldige tickets gevonden.');
+        // Voeg toe aan bestaande tickets
+        let existing = JSON.parse(localStorage.getItem('tickets') || '[]');
+        localStorage.setItem('tickets', JSON.stringify([...existing, ...tickets]));
+        loadTickets();
+        alert('Tickets geïmporteerd!');
+    };
+    reader.readAsText(file);
+}
+
 // Event listeners
 document.getElementById('createTicketBtn').addEventListener('click', openCreateModal);
 document.getElementById('statusFilter').addEventListener('change', loadTickets);
 document.getElementById('sortFilter').addEventListener('change', loadTickets);
+document.getElementById('exportCsvBtn').addEventListener('click', exportTicketsToCSV);
+document.getElementById('importCsvInput').addEventListener('change', function(e) {
+    if (e.target.files.length) {
+        importTicketsFromCSV(e.target.files[0]);
+        e.target.value = ''; // reset input
+    }
+});
 
 // Init
 loadTickets();
