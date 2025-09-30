@@ -33,6 +33,7 @@ function loadTickets() {
 <td>${ticket.title}</td>
 <td>${ticket.description.substring(0, 50)}${ticket.description.length > 50 ? '...' : ''}</td>
 <td>${ticket.status}</td>
+<td>${ticket.assigned_to || '-'}</td>
 <td>${new Date(ticket.created_at).toLocaleString('nl-NL', {year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'})}</td>
 <td>${ticket.closed_at ? new Date(ticket.closed_at).toLocaleString('nl-NL', {year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}) : '-'}</td>
 `;
@@ -47,6 +48,7 @@ function openCreateModal() {
     document.getElementById('newTicketTitle').value = '';
     document.getElementById('newTicketDescription').value = '';
     document.getElementById('newTicketStatus').value = 'Open';
+    document.getElementById('newTicketAssigned').value = 'Chris';
     document.getElementById('createTicketModal').style.display = 'flex';
 }
 
@@ -60,6 +62,7 @@ function saveNewTicket() {
     const title = document.getElementById('newTicketTitle').value.trim();
     const description = document.getElementById('newTicketDescription').value.trim();
     const status = document.getElementById('newTicketStatus').value;
+    const assigned_to = document.getElementById('newTicketAssigned').value;
 
     if (!title || !description) {
         alert('Titel en beschrijving verplicht');
@@ -72,6 +75,7 @@ function saveNewTicket() {
         title,
         description,
         status,
+        assigned_to,
         created_at: new Date().toISOString(),
         closed_at: status === 'Gesloten' ? new Date().toISOString() : null
     });
@@ -90,6 +94,7 @@ function openTicketModal(id) {
     document.getElementById('modalTitle').value = ticket.title;
     document.getElementById('modalDescription').value = ticket.description;
     document.getElementById('modalStatus').value = ticket.status;
+    document.getElementById('modalAssigned').value = ticket.assigned_to || 'Chris';
     document.getElementById('modalCreated').textContent = new Date(ticket.created_at).toLocaleString('nl-NL', {year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
     document.getElementById('modalClosed').textContent = ticket.closed_at ? new Date(ticket.closed_at).toLocaleString('nl-NL', {year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}) : '-';
 
@@ -107,6 +112,7 @@ function updateStatusFromModal() {
     const newStatus = document.getElementById('modalStatus').value;
     const newTitle = document.getElementById('modalTitle').value.trim();
     const newDescription = document.getElementById('modalDescription').value.trim();
+    const newAssigned = document.getElementById('modalAssigned').value;
 
     let tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
     tickets = tickets.map(t => {
@@ -114,6 +120,7 @@ function updateStatusFromModal() {
             t.status = newStatus;
             t.title = newTitle;
             t.description = newDescription;
+            t.assigned_to = newAssigned;
             if (newStatus === 'Gesloten' && !t.closed_at) t.closed_at = new Date().toISOString();
             if (newStatus !== 'Gesloten') t.closed_at = null;
         }
@@ -170,12 +177,13 @@ function exportTicketsToCSV() {
     let tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
     if (!tickets.length) return alert('Geen tickets om te exporteren.');
 
-    const header = ['Titel', 'Beschrijving', 'Status', 'Aangemaakt', 'Gesloten'];
+    const header = ['Titel', 'Beschrijving', 'Status', 'Toegewezen aan', 'Aangemaakt', 'Gesloten'];
     const rows = tickets.map(t =>
         [
             `"${(t.title || '').replace(/"/g, '""')}"`,
             `"${(t.description || '').replace(/"/g, '""')}"`,
             `"${t.status}"`,
+            `"${t.assigned_to || ''}"`,
             `"${t.created_at}"`,
             `"${t.closed_at || ''}"`
         ].join(',')
@@ -222,14 +230,15 @@ function importTicketsFromCSV(file) {
             }
             cols.push(value);
 
-            if (cols.length < 5) continue;
+            if (cols.length < 6) continue;
             tickets.push({
                 id: Date.now() + i,
                 title: cols[0],
                 description: cols[1],
                 status: cols[2],
-                created_at: cols[3],
-                closed_at: cols[4] || null
+                assigned_to: cols[3],
+                created_at: cols[4],
+                closed_at: cols[5] || null
             });
         }
         if (!tickets.length) return alert('Geen geldige tickets gevonden.');
