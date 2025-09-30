@@ -262,5 +262,24 @@ document.getElementById('importCsvInput').addEventListener('change', function(e)
     }
 });
 
+// Migreer oude tickets (voeg assigned_to toe als deze ontbreekt)
+function migrateTickets() {
+    let tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
+    let needsUpdate = false;
+    
+    tickets = tickets.map(ticket => {
+        if (!ticket.assigned_to) {
+            ticket.assigned_to = 'Chris'; // Default waarde
+            needsUpdate = true;
+        }
+        return ticket;
+    });
+    
+    if (needsUpdate) {
+        localStorage.setItem('tickets', JSON.stringify(tickets));
+    }
+}
+
 // Init
+migrateTickets();
 loadTickets();
