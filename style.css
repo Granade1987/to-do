@@ -299,6 +299,8 @@ textarea {
     overflow: hidden;
     border-radius: 12px;
     background: #fff;
+    max-height: 600px;
+    overflow-y: auto;
 }
 
 table {
@@ -320,6 +322,9 @@ th {
     font-weight: 600;
     color: #222;
     border-bottom: 2px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 tr {
