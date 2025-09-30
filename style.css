@@ -205,6 +205,48 @@ textarea {
     color: #222;
 }
 
+/* Icon buttons voor export/import */
+.btn-icon {
+    background: #f6f7f9;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #6c757d;
+    position: relative;
+}
+
+.btn-icon:hover {
+    background: #e9ecef;
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-icon::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.btn-icon:hover::after {
+    opacity: 1;
+}
+
 /* --- FILTERS & ACTIES --- */
 .filters, .bulk-actions {
     display: flex;
