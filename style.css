@@ -346,6 +346,8 @@ tr:hover {
     -webkit-box-orient: vertical;
     white-space: normal;
     word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Status kleuren */
