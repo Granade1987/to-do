@@ -2,6 +2,12 @@
 function loadTickets() {
     let tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
 
+    // Filteren op toegewezen aan
+    const assignedToFilter = document.getElementById('assignedtoFilter').value;
+    if (assignedToFilter !== 'Iedereen') {
+        tickets = tickets.filter(t => t.assigned_to === assignedToFilter);
+    }
+
     // Filteren op status
     const statusFilter = document.getElementById('statusFilter').value;
     tickets = tickets.filter(t => (statusFilter === 'Alle' || t.status === statusFilter));
@@ -252,6 +258,7 @@ function importTicketsFromCSV(file) {
 
 // Event listeners
 document.getElementById('createTicketBtn').addEventListener('click', openCreateModal);
+document.getElementById('assignedtoFilter').addEventListener('change', loadTickets);
 document.getElementById('statusFilter').addEventListener('change', loadTickets);
 document.getElementById('sortFilter').addEventListener('change', loadTickets);
 document.getElementById('exportCsvBtn').addEventListener('click', exportTicketsToCSV);
