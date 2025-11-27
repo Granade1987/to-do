@@ -340,6 +340,7 @@ tr:hover {
 .description-cell {
     max-width: 350px;
     line-height: 1.5;
+    max-height: 3em; /* 2 regels * 1.5 line-height = 3em */
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -348,6 +349,7 @@ tr:hover {
     word-wrap: break-word;
     word-break: break-word;
     overflow-wrap: break-word;
+    text-overflow: ellipsis;
 }
 
 /* Status kleuren */
