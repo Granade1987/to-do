@@ -336,6 +336,18 @@ tr:hover {
     background: #f0f4fa;
 }
 
+/* Beschrijving cel met 2 regels */
+.description-cell {
+    max-width: 350px;
+    line-height: 1.5;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
 /* Status kleuren */
 tbody tr.in-behandeling {
     background-color: #fff7e6 !important; /* oranje tint */
@@ -521,6 +533,9 @@ tbody tr.open td:not(:first-child) {
         width: 100%;
         justify-content: center;
     }
+    .description-cell {
+        max-width: 200px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -544,6 +559,9 @@ tbody tr.open td:not(:first-child) {
     th, td {
         font-size: 12px;
         padding: 8px 4px;
+    }
+    .description-cell {
+        max-width: 150px;
     }
 }
 

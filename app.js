@@ -37,7 +37,7 @@ function loadTickets() {
         };
         tr.innerHTML = `
             <td>${ticket.title}</td>
-            <td>${ticket.description.substring(0, 50)}${ticket.description.length > 50 ? '...' : ''}</td>
+            <td class="description-cell">${ticket.description.substring(0, 100)}${ticket.description.length > 100 ? '...' : ''}</td>
             <td>${ticket.status}</td>
             <td>${ticket.assigned_to || 'Chris'}</td>
             <td>${new Date(ticket.created_at).toLocaleString('nl-NL', {year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'})}</td>
