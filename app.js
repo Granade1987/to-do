@@ -405,6 +405,25 @@ async function initializeApp() {
     migrateTickets();
     loadTickets();
 }
+// --- DARK MODE TOGGLE LOGICA ---
+function initDarkMode() {
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    
+    // Pas het thema direct toe bij laden
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    darkModeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+}
+
+// Roep dit aan zodra de pagina geladen is
+document.addEventListener('DOMContentLoaded', initDarkMode);
 
 // Init
 initializeApp();

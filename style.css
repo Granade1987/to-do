@@ -1,5 +1,15 @@
 /* --- DESIGN SYSTEM & VARIABELEN --- */
 :root {
+ 
+    /* --- DARK MODE KLEUREN --- */
+[data-theme="dark"] {
+    --color-bg: #121212;
+    --color-surface: #1e1e1e;
+    --color-text: #e0e0e0;
+    --color-text-secondary: #b0b0b0;
+    --color-border: #333333;
+}
+
     --color-primary: #007bff; /* Een heldere, moderne blauw */
     --color-primary-hover: #0056b3;
     --color-danger: #dc3545;
@@ -624,3 +634,35 @@ tbody tr.open td:not(:first-child) {
 #modalDescription {
     background: #fff !important;
 }
+/* --- DARK MODE LOGICA --- */
+
+[data-theme="dark"] body { background-color: var(--color-bg); color: var(--color-text); }
+
+[data-theme="dark"] .container, 
+[data-theme="dark"] .modal-content, 
+[data-theme="dark"] .filters-bulk-row,
+[data-theme="dark"] .ticket-list-container { 
+    background-color: var(--color-surface); 
+    color: var(--color-text); 
+    border-color: var(--color-border);
+}
+
+[data-theme="dark"] th { background-color: #2d2d2d; color: var(--color-text); border-bottom-color: var(--color-border); }
+[data-theme="dark"] td { color: var(--color-text); border-bottom-color: var(--color-border); }
+
+[data-theme="dark"] input, 
+[data-theme="dark"] select, 
+[data-theme="dark"] textarea { 
+    background-color: var(--color-bg) !important; 
+    color: var(--color-text) !important; 
+    border-color: var(--color-border) !important; 
+}
+
+[data-theme="dark"] .header-row h1 { color: var(--color-text); }
+[data-theme="dark"] .logo-header { filter: brightness(0) invert(1); }
+[data-theme="dark"] .btn-icon { background: #2d2d2d; border-color: var(--color-border); color: var(--color-text-secondary); }
+
+/* Donkere versies van de status rijen */
+[data-theme="dark"] tbody tr.in-behandeling { background-color: #2c2100 !important; }
+[data-theme="dark"] tbody tr.gesloten { background-color: #1b261f !important; }
+[data-theme="dark"] tbody tr.open { background-color: #1e1e1e !important; }
