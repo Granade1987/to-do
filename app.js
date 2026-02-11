@@ -335,6 +335,31 @@ function migrateTickets() {
     }
 }
 
+// Laad tickets uit tickets.json of localStorage
+async function initializeApp() {
+    // Eerst kijken of localStorage tickets heeft
+    let existingTickets = localStorage.getItem('tickets');
+    
+    if (!existingTickets || existingTickets === '[]') {
+        // Probeer uit tickets.json te laden
+        try {
+            const response = await fetch('tickets.json');
+            if (response.ok) {
+                const ticketsFromFile = await response.json();
+                if (ticketsFromFile.length > 0) {
+                    localStorage.setItem('tickets', JSON.stringify(ticketsFromFile));
+                    console.log('✅ Tickets hersteld uit tickets.json');
+                }
+            }
+        } catch (error) {
+            console.log('📝 Geen tickets.json gevonden, start met lege lijst');
+        }
+    }
+    
+    // Start de app
+    migrateTickets();
+    loadTickets();
+}
+
 // Init
-migrateTickets();
-loadTickets();
+initializeApp();
