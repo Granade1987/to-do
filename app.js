@@ -52,7 +52,7 @@ function loadTickets() {
 // --- GITHUB SYNC FUNCTIE ---
 async function syncToGitHub() {
     // VUL DEZE GEGEVENS IN:
-    const GITHUB_TOKEN = 'YOUR_GITHUB_TOKEN_HERE'; // Replace with your actual token
+    const GITHUB_TOKEN = 'YOUR_GITHUB_TOKEN_HERE'; // Voeg hier je token in
     const REPO_OWNER = 'Granade1987';
     const REPO_NAME = 'to-do';
     const FILE_PATH = 'tickets.json'; 
