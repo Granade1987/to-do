@@ -49,6 +49,47 @@ function loadTickets() {
     applyStatusColors();
 }
 
+// --- GITHUB SYNC FUNCTIE ---
+async function syncToGitHub() {
+    // VUL DEZE GEGEVENS IN:
+    const GITHUB_TOKEN = 'YOUR_GITHUB_TOKEN_HERE'; // Replace with your actual token
+    const REPO_OWNER = 'Granade1987';
+    const REPO_NAME = 'to-do';
+    const FILE_PATH = 'tickets.json'; 
+
+    const tickets = localStorage.getItem('tickets');
+    if (!tickets) return;
+
+    try {
+        let sha = "";
+        const getRes = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`);
+        
+        if (getRes.ok) {
+            const fileData = await getRes.json();
+            sha = fileData.sha;
+        }
+
+        const putRes = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `token ${GITHUB_TOKEN}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                message: `Ticket backup: ${new Date().toLocaleString('nl-NL')}`,
+                content: btoa(unescape(encodeURIComponent(tickets))),
+                sha: sha !== "" ? sha : undefined
+            })
+        });
+
+        if (putRes.ok) {
+            console.log("✅ Synchronisatie met GitHub geslaagd");
+        }
+    } catch (error) {
+        console.error("❌ GitHub Sync Fout:", error);
+    }
+}
+
 // Modal openen voor nieuw ticket
 function openCreateModal() {
     document.getElementById('newTicketTitle').value = '';
@@ -86,6 +127,8 @@ function saveNewTicket() {
         closed_at: status === 'Gesloten' ? new Date().toISOString() : null
     });
     localStorage.setItem('tickets', JSON.stringify(tickets));
+    
+    syncToGitHub(); // Automatische sync
     closeCreateModal();
     loadTickets();
 }
@@ -133,6 +176,8 @@ function updateStatusFromModal() {
         return t;
     });
     localStorage.setItem('tickets', JSON.stringify(tickets));
+    
+    syncToGitHub(); // Automatische sync
     closeModal();
     loadTickets();
 }
@@ -150,6 +195,8 @@ function deleteTicket(id) {
     let tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
     tickets = tickets.filter(t => t.id !== id);
     localStorage.setItem('tickets', JSON.stringify(tickets));
+    
+    syncToGitHub(); // Automatische sync
     closeModal();
     loadTickets();
 }
@@ -217,7 +264,6 @@ function importTicketsFromCSV(file) {
 
         const tickets = [];
         for (let i = 1; i < lines.length; i++) {
-            // Gebruik een echte CSV parser voor correcte splitsing
             const cols = [];
             let inQuotes = false, value = '', line = lines[i];
             for (let j = 0; j < line.length; j++) {
@@ -250,6 +296,8 @@ function importTicketsFromCSV(file) {
         if (!tickets.length) return alert('Geen geldige tickets gevonden.');
         let existing = JSON.parse(localStorage.getItem('tickets') || '[]');
         localStorage.setItem('tickets', JSON.stringify([...existing, ...tickets]));
+        
+        syncToGitHub();
         loadTickets();
         alert('Tickets geïmporteerd!');
     };
@@ -269,14 +317,14 @@ document.getElementById('importCsvInput').addEventListener('change', function(e)
     }
 });
 
-// Migreer oude tickets (voeg assigned_to toe als deze ontbreekt)
+// Migreer oude tickets
 function migrateTickets() {
     let tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
     let needsUpdate = false;
     
     tickets = tickets.map(ticket => {
         if (!ticket.assigned_to) {
-            ticket.assigned_to = 'Chris'; // Default waarde
+            ticket.assigned_to = 'Chris';
             needsUpdate = true;
         }
         return ticket;
