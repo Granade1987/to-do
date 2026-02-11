@@ -51,8 +51,14 @@ function loadTickets() {
 
 // --- GITHUB SYNC FUNCTIE ---
 async function syncToGitHub() {
-    // VUL DEZE GEGEVENS IN:
-    const GITHUB_TOKEN = 'YOUR_GITHUB_TOKEN_HERE'; // Voeg hier je token in
+    // Token uit localStorage halen
+    const GITHUB_TOKEN = localStorage.getItem('github_token');
+    
+    if (!GITHUB_TOKEN) {
+        console.warn('⚠️ GitHub token niet ingesteld. Ga naar Instellingen > GitHub Token');
+        return;
+    }
+    
     const REPO_OWNER = 'Granade1987';
     const REPO_NAME = 'to-do';
     const FILE_PATH = 'tickets.json'; 
@@ -335,6 +341,30 @@ function migrateTickets() {
     }
 }
 
+// --- SETTINGS MODAL FUNCTIES ---
+function openSettingsModal() {
+    const token = localStorage.getItem('github_token') || '';
+    document.getElementById('githubTokenInput').value = token;
+    document.getElementById('settingsModal').style.display = 'flex';
+}
+
+function closeSettingsModal() {
+    document.getElementById('settingsModal').style.display = 'none';
+}
+
+function saveGithubToken() {
+    const token = document.getElementById('githubTokenInput').value.trim();
+    
+    if (!token) {
+        alert('Voer een GitHub token in');
+        return;
+    }
+    
+    localStorage.setItem('github_token', token);
+    alert('✅ Token opgeslagen! Tickets worden nu gesynchroniseerd met GitHub.');
+    closeSettingsModal();
+}
+
 // Laad tickets uit tickets.json of localStorage
 async function initializeApp() {
     // Eerst kijken of localStorage tickets heeft
@@ -363,3 +393,7 @@ async function initializeApp() {
 
 // Init
 initializeApp();
+
+// Event Listeners voor buttons
+document.getElementById('createTicketBtn').addEventListener('click', openCreateModal);
+document.getElementById('settingsBtn').addEventListener('click', openSettingsModal);

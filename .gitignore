@@ -1,0 +1,22 @@
+# Environment variables - NOOIT committen!
+.env
+.env.local
+.env.*.local
+
+# Node modules
+node_modules/
+package-lock.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build outputs
+dist/
+build/
