@@ -1,29 +1,21 @@
 /* --- DESIGN SYSTEM & VARIABELEN --- */
 :root {
- 
-    /* --- DARK MODE KLEUREN --- */
-[data-theme="dark"] {
-    --color-bg: #121212;
-    --color-surface: #1e1e1e;
-    --color-text: #e0e0e0;
-    --color-text-secondary: #b0b0b0;
-    --color-border: #333333;
-}
-
-    --color-primary: #007bff; /* Een heldere, moderne blauw */
+    --color-primary: #007bff;
     --color-primary-hover: #0056b3;
     --color-danger: #dc3545;
     --color-danger-hover: #c82333;
     --color-warning-bg: #fff3cd;
     --color-warning-border: #ff9800;
-    --color-success-bg: #e9f7ef; /* Lichte achtergrond voor gesloten tickets */
+    --color-success-bg: #e9f7ef;
     --color-success-border: #28a745;
     
     --color-text: #020202;
     --color-text-secondary: #6c757d;
     --color-bg: #f8f9fa;
-    --color-surface: #ffffff; /* Kleur van panelen/kaarten */
+    --color-surface: #ffffff;
     --color-border: #dee2e6;
+    --color-hover-bg: #f0f4fa;
+    --color-input-bg: #f9fbfd;
     
     --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     --border-radius: 8px;
@@ -32,23 +24,48 @@
     --transition: all 0.2s ease-in-out;
 }
 
+/* --- DARK MODE KLEUREN --- */
+[data-theme="dark"] {
+    --color-primary: #2196f3;
+    --color-primary-hover: #1976d2;
+    --color-danger: #f44336;
+    --color-danger-hover: #d32f2f;
+    --color-warning-bg: #3d2f00;
+    --color-warning-border: #ff9800;
+    --color-success-bg: #0d2818;
+    --color-success-border: #28a745;
+    
+    --color-text: #e8e8e8;
+    --color-text-secondary: #a0a0a0;
+    --color-bg: #0d1117;
+    --color-surface: #161b22;
+    --color-border: #30363d;
+    --color-hover-bg: #1c2128;
+    --color-input-bg: #0d1117;
+    
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.4);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.5);
+}
+
 /* --- ALGEMENE STIJLEN --- */
 body {
-    background: #f8f9fa;
-    font-family: 'Inter', Arial, sans-serif;
-    color: #444;
+    background: var(--color-bg);
+    font-family: var(--font-family);
+    color: var(--color-text);
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
     max-width: 1400px;
     margin: 40px auto;
-    background: #fff;
+    background: var(--color-surface);
     border-radius: 12px;
-    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.04);
+    box-shadow: var(--shadow-md);
     padding: 32px 32px 24px 32px;
     width: 95%;
+    transition: background-color 0.3s ease;
 }
 
 .header-row {
@@ -64,7 +81,17 @@ body {
     height: auto;
     display: block;
     margin: 0;
+    transition: filter 0.3s ease;
+}
+
+/* Light mode: zwart logo */
+[data-theme="light"] .logo-header {
     filter: brightness(0) invert(0);
+}
+
+/* Dark mode: wit logo */
+[data-theme="dark"] .logo-header {
+    filter: brightness(0) invert(1);
 }
 
 .header-row h1 {
@@ -74,9 +101,10 @@ body {
     margin: 0;
     font-size: 32px;
     font-weight: 700;
-    color: #222;
+    color: var(--color-text);
     line-height: 1;
     white-space: nowrap;
+    transition: color 0.3s ease;
 }
 
 /* --- TABBLADEN --- */
@@ -84,7 +112,8 @@ body {
     display: flex;
     gap: 8px;
     margin-bottom: 28px;
-    border-bottom: 2px solid #e5e7eb;
+    border-bottom: 2px solid var(--color-border);
+    transition: border-color 0.3s ease;
 }
 
 .tab-btn {
@@ -94,7 +123,7 @@ body {
     padding: 12px 20px;
     font-size: 16px;
     font-weight: 600;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     cursor: pointer;
     transition: all 0.2s ease;
     text-transform: uppercase;
@@ -102,12 +131,12 @@ body {
 }
 
 .tab-btn:hover {
-    color: #007bff;
+    color: var(--color-primary);
 }
 
 .tab-btn.active {
-    color: #007bff;
-    border-bottom-color: #007bff;
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
 }
 
 h2 {
@@ -117,25 +146,7 @@ h2 {
     margin-bottom: 20px;
     border-bottom: 1px solid var(--color-border);
     padding-bottom: 10px;
-}
-
-/* --- PANELEN EN KAARTEN --- */
-.panel {
-    background-color: var(--color-surface);
-    padding: 25px 30px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-sm);
-    margin-bottom: 25px;
-    border: 1px solid var(--color-border);
-}
-/* Pas dit toe op je HTML voor een consistente look */
-.new-ticket, .ticket-list-container, .filters, .bulk-actions {
-    background-color: var(--color-surface);
-    padding: 25px 30px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-sm);
-    margin-bottom: 25px;
-    border: 1px solid var(--color-border);
+    color: var(--color-text);
 }
 
 /* --- FORMULIEREN --- */
@@ -143,24 +154,27 @@ h2 {
     display: grid;
     gap: 15px;
 }
+
 .new-ticket-form input, .new-ticket-form textarea {
-    width: 100%; box-sizing: border-box;
+    width: 100%; 
+    box-sizing: border-box;
 }
 
 input[type="text"], select, textarea {
-    border: 1px solid #cfd8dc;
+    border: 1px solid var(--color-border);
     border-radius: 6px;
     padding: 11px 14px;
     font-size: 15px;
     font-family: var(--font-family);
-    background: #f9fbfd;
+    background: var(--color-input-bg);
+    color: var(--color-text);
     outline: none;
-    transition: border 0.18s, box-shadow 0.18s;
+    transition: border 0.18s, box-shadow 0.18s, background-color 0.3s ease, color 0.3s ease;
 }
 
 input[type="text"]:focus, select:focus, textarea:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0 2px rgba(0,123,255,0.10);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.15);
 }
 
 textarea {
@@ -170,7 +184,7 @@ textarea {
 
 /* --- KNOPPEN (Buttons) --- */
 .btn {
-    background: #1976d2;
+    background: var(--color-primary);
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -184,36 +198,41 @@ textarea {
     justify-content: center;
 }
 
+.btn:hover {
+    background: var(--color-primary-hover);
+}
+
 .btn-primary {
-    background: #007bff;
+    background: var(--color-primary);
     color: #fff;
     border: none;
 }
 
 .btn-primary:hover {
-    background: #0056b3;
+    background: var(--color-primary-hover);
     color: #fff;
 }
 
 .btn-danger {
-    background: #dc3545;
+    background: var(--color-danger);
     color: #fff;
     border: none;
 }
 
 .btn-danger:hover {
-    background: #c82333;
+    background: var(--color-danger-hover);
     color: #fff;
 }
 
 .btn-secondary {
-    background: #f6f7f9;
-    color: #444;
-    border: 1px solid #d1d5db;
+    background: var(--color-input-bg);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .btn-secondary:hover {
-    background: #e9ecef;
+    background: var(--color-hover-bg);
 }
 
 .btn-small {
@@ -224,9 +243,9 @@ textarea {
 }
 
 .btn-muted {
-    background: #f6f7f9;
-    color: #888;
-    border: 1px solid #d1d5db;
+    background: var(--color-input-bg);
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
     opacity: 0.7;
     cursor: not-allowed;
     pointer-events: none;
@@ -234,23 +253,23 @@ textarea {
 }
 
 .btn-muted.active {
-    background: #e9ecef;
-    color: #444;
-    border-color: #b5b9bd;
+    background: var(--color-hover-bg);
+    color: var(--color-text);
+    border-color: var(--color-border);
     opacity: 1;
     cursor: pointer;
     pointer-events: auto;
 }
 
 .btn-muted:hover.active {
-    background: #dee2e6;
-    color: #222;
+    background: var(--color-hover-bg);
+    color: var(--color-text);
 }
 
 /* Icon buttons voor export/import */
 .btn-icon {
-    background: #f6f7f9;
-    border: 1px solid #d1d5db;
+    background: var(--color-input-bg);
+    border: 1px solid var(--color-border);
     border-radius: 6px;
     padding: 8px;
     display: inline-flex;
@@ -258,14 +277,14 @@ textarea {
     justify-content: center;
     cursor: pointer;
     transition: all 0.2s ease;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     position: relative;
 }
 
 .btn-icon:hover {
-    background: #e9ecef;
-    color: #007bff;
-    border-color: #007bff;
+    background: var(--color-hover-bg);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
 }
 
 .btn-icon::after {
@@ -283,6 +302,12 @@ textarea {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease;
+    z-index: 1000;
+}
+
+[data-theme="dark"] .btn-icon::after {
+    background: #f0f0f0;
+    color: #333;
 }
 
 .btn-icon:hover::after {
@@ -300,9 +325,9 @@ textarea {
 
 /* Nieuwe gecombineerde rij voor filters en bulk acties */
 .filters-bulk-row {
-    background: #f8fafc;
-    border: 1px solid #e3e8ee;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
     padding: 18px 28px;
     border-radius: 10px;
     margin-bottom: 28px;
@@ -311,6 +336,7 @@ textarea {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .bulk-actions-inline {
@@ -331,7 +357,7 @@ textarea {
     align-items: center;
     gap: 10px;
     font-weight: 500;
-    color: #444;
+    color: var(--color-text);
     font-size: 15px;
 }
 
@@ -340,30 +366,33 @@ textarea {
     padding: 0;
     overflow: hidden;
     border-radius: 12px;
-    background: #fff;
+    background: var(--color-surface);
     max-height: 600px;
     overflow-y: auto;
+    border: 1px solid var(--color-border);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    background: #fff;
+    background: var(--color-surface);
 }
 
 th, td {
     font-size: 15px;
     padding: 18px 16px;
     text-align: left;
-    border-bottom: 1px solid #e5e7eb;
-    color: #444;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+    transition: background-color 0.2s ease, color 0.3s ease;
 }
 
 th {
-    background: #f6f7f9;
+    background: var(--color-input-bg);
     font-weight: 600;
-    color: #222;
-    border-bottom: 2px solid #e5e7eb;
+    color: var(--color-text);
+    border-bottom: 2px solid var(--color-border);
     position: sticky;
     top: 0;
     z-index: 10;
@@ -374,14 +403,14 @@ tr {
 }
 
 tr:hover {
-    background: #f0f4fa;
+    background: var(--color-hover-bg);
 }
 
 /* Beschrijving cel met 2 regels */
 .description-cell {
     max-width: 350px;
     line-height: 1.5;
-    max-height: 3em; /* 2 regels * 1.5 line-height = 3em */
+    max-height: 3em;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -393,34 +422,57 @@ tr:hover {
     text-overflow: ellipsis;
 }
 
-/* Status kleuren */
-tbody tr.in-behandeling {
-    background-color: #fff7e6 !important; /* oranje tint */
-}
-tbody tr.in-behandeling td:first-child {
-    border-left: 4px solid #ff9800 !important; /* oranje rand */
-}
-tbody tr.in-behandeling td:not(:first-child) {
-    border-left: none;
+/* Status kleuren - LIGHT MODE */
+[data-theme="light"] tbody tr.in-behandeling {
+    background-color: #fff7e6 !important;
 }
 
-tbody tr.gesloten {
-    background-color: #eafaf1 !important; /* groen tint */
-}
-tbody tr.gesloten td:first-child {
-    border-left: 4px solid #34c759 !important; /* groen rand */
-}
-tbody tr.gesloten td:not(:first-child) {
-    border-left: none;
+[data-theme="light"] tbody tr.in-behandeling td:first-child {
+    border-left: 4px solid #ff9800 !important;
 }
 
-tbody tr.open {
+[data-theme="light"] tbody tr.gesloten {
+    background-color: #eafaf1 !important;
+}
+
+[data-theme="light"] tbody tr.gesloten td:first-child {
+    border-left: 4px solid #34c759 !important;
+}
+
+[data-theme="light"] tbody tr.open {
     background-color: #fff !important;
 }
-tbody tr.open td:first-child {
-    border-left: 4px solid #1976d2 !important; /* blauw rand */
+
+[data-theme="light"] tbody tr.open td:first-child {
+    border-left: 4px solid #1976d2 !important;
 }
-tbody tr.open td:not(:first-child) {
+
+/* Status kleuren - DARK MODE */
+[data-theme="dark"] tbody tr.in-behandeling {
+    background-color: #2c2100 !important;
+}
+
+[data-theme="dark"] tbody tr.in-behandeling td:first-child {
+    border-left: 4px solid #ff9800 !important;
+}
+
+[data-theme="dark"] tbody tr.gesloten {
+    background-color: #0d2818 !important;
+}
+
+[data-theme="dark"] tbody tr.gesloten td:first-child {
+    border-left: 4px solid #4caf50 !important;
+}
+
+[data-theme="dark"] tbody tr.open {
+    background-color: #161b22 !important;
+}
+
+[data-theme="dark"] tbody tr.open td:first-child {
+    border-left: 4px solid #2196f3 !important;
+}
+
+tbody tr td:not(:first-child) {
     border-left: none;
 }
 
@@ -428,86 +480,112 @@ tbody tr.open td:not(:first-child) {
 .modal {
     position: fixed;
     z-index: 1000;
-    left: 0; top: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.10);
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
     display: none;
     align-items: center;
     justify-content: center;
 }
+
+[data-theme="dark"] .modal {
+    background: rgba(0,0,0,0.7);
+}
+
 .modal-content {
-    background: #fff;
+    background: var(--color-surface);
     border-radius: 12px;
     padding: 32px 28px;
     max-width: 480px;
     margin: 40px auto;
-    box-shadow: 0 2px 24px 0 rgba(0,0,0,0.10);
+    box-shadow: var(--shadow-md);
     position: relative;
+    transition: background-color 0.3s ease;
 }
+
 .modal-close {
     position: absolute;
     right: 18px;
     top: 18px;
     font-size: 22px;
-    color: #888;
+    color: var(--color-text-secondary);
     cursor: pointer;
+    transition: color 0.2s ease;
 }
+
+.modal-close:hover {
+    color: var(--color-text);
+}
+
 .modal-field {
     margin-bottom: 18px;
 }
+
 .modal-label {
     font-weight: 500;
     margin-bottom: 4px;
     display: block;
-    color: #222;
+    color: var(--color-text);
 }
+
 .modal-value {
     display: block;
     margin-top: 4px;
     margin-bottom: 2px;
     font-size: 16px;
-    color: #333;
+    color: var(--color-text);
     letter-spacing: 0.2px;
     line-height: 1.6;
     white-space: pre-line;
 }
+
 .modal-input,
 .modal-status-select {
     width: 100%;
     padding: 10px 12px;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--color-border);
     border-radius: 6px;
     font-size: 15px;
     margin-bottom: 18px;
-    background: #fff;
-    color: #222;
+    background: var(--color-input-bg);
+    color: var(--color-text);
     box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
+
 .modal-input:focus,
 .modal-status-select:focus {
-    outline: 2px solid #1976d2;
-    border-color: #1976d2;
+    outline: 2px solid var(--color-primary);
+    border-color: var(--color-primary);
 }
+
 .modal-actions {
     display: flex;
     gap: 10px;
     margin-top: 25px;
     padding-top: 20px;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid var(--color-border);
 }
+
 .modal-actions .btn {
     flex: 1;
 }
+
 .modal-section {
     margin-bottom: 20px;
 }
+
 .modal-section h3 {
     margin: 0 0 10px 0;
     font-size: 16px;
     font-weight: 600;
-    color: #333;
+    color: var(--color-text);
 }
+
 .modal-delete-link {
-    color: #dc3545;
+    color: var(--color-danger);
     cursor: pointer;
     font-size: 15px;
     font-weight: 500;
@@ -519,37 +597,10 @@ tbody tr.open td:not(:first-child) {
     background: none;
     display: inline-block;
 }
-.modal-delete-link:hover {
-    color: #a71d2a;
-    text-decoration: underline;
-}
 
-/* Buttons */
-.btn {
-    background: #1976d2;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    padding: 10px 22px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.18s;
-}
-.btn:hover {
-    background: #1253a4;
-}
-.btn-secondary {
-    background: #f6f7f9;
-    color: #444;
-    border: 1px solid #d1d5db;
-}
-.btn-secondary:hover {
-    background: #e9ecef;
-}
-.btn-small {
-    padding: 7px 14px;
-    font-size: 14px;
+.modal-delete-link:hover {
+    color: var(--color-danger-hover);
+    text-decoration: underline;
 }
 
 /* Responsive */
@@ -626,43 +677,3 @@ tbody tr.open td:not(:first-child) {
         max-width: 150px;
     }
 }
-
-/* Specifieke stijlen voor modal velden */
-#newTicketTitle,
-#newTicketDescription,
-#modalTitle,
-#modalDescription {
-    background: #fff !important;
-}
-/* --- DARK MODE LOGICA --- */
-
-[data-theme="dark"] body { background-color: var(--color-bg); color: var(--color-text); }
-
-[data-theme="dark"] .container, 
-[data-theme="dark"] .modal-content, 
-[data-theme="dark"] .filters-bulk-row,
-[data-theme="dark"] .ticket-list-container { 
-    background-color: var(--color-surface); 
-    color: var(--color-text); 
-    border-color: var(--color-border);
-}
-
-[data-theme="dark"] th { background-color: #2d2d2d; color: var(--color-text); border-bottom-color: var(--color-border); }
-[data-theme="dark"] td { color: var(--color-text); border-bottom-color: var(--color-border); }
-
-[data-theme="dark"] input, 
-[data-theme="dark"] select, 
-[data-theme="dark"] textarea { 
-    background-color: var(--color-bg) !important; 
-    color: var(--color-text) !important; 
-    border-color: var(--color-border) !important; 
-}
-
-[data-theme="dark"] .header-row h1 { color: var(--color-text); }
-[data-theme="dark"] .logo-header { filter: brightness(0) invert(1); }
-[data-theme="dark"] .btn-icon { background: #2d2d2d; border-color: var(--color-border); color: var(--color-text-secondary); }
-
-/* Donkere versies van de status rijen */
-[data-theme="dark"] tbody tr.in-behandeling { background-color: #2c2100 !important; }
-[data-theme="dark"] tbody tr.gesloten { background-color: #1b261f !important; }
-[data-theme="dark"] tbody tr.open { background-color: #1e1e1e !important; }
