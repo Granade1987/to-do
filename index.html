@@ -15,6 +15,12 @@
         <h1>To-Do</h1>
     </div>
     
+    <!-- Tabbladen -->
+    <div class="tabs-container">
+        <button class="tab-btn active" data-tab="CHRIS" onclick="switchTab('CHRIS')">CHRIS</button>
+        <button class="tab-btn" data-tab="LUCA" onclick="switchTab('LUCA')">LUCA</button>
+    </div>
+    
     <!-- Filters -->
     <div class="filters-bulk-row">
         <div class="bulk-actions-inline">
@@ -55,6 +61,7 @@
                     <option value="Iedereen">Iedereen</option>
                     <option value="Extern">Extern</option>
                     <option value="Chris">Chris</option>
+                    <option value="Luca">Luca</option>
                 </select>
             </label>           
             <label><b>Sorteer op:</b>
@@ -110,6 +117,7 @@
             <label class="modal-label">Toegewezen aan:</label>
             <select id="modalAssigned" class="modal-status-select">
                 <option value="Chris">Chris</option>
+                <option value="Luca">Luca</option>
                 <option value="Extern">Extern</option>
             </select>
         </div>
@@ -154,6 +162,7 @@
             <label class="modal-label">Toegewezen aan:</label>
             <select id="newTicketAssigned" class="modal-status-select">
                 <option value="Chris">Chris</option>
+                <option value="Luca">Luca</option>
                 <option value="Extern">Extern</option>
             </select>
         </div>

@@ -1,8 +1,28 @@
+// Huidige tab
+let currentTab = 'CHRIS';
+
+// Tab wisselen
+function switchTab(tab) {
+    currentTab = tab;
+    
+    // Maak alle tabs inactief
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    
+    // Maak de geselecteerde tab actief
+    document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+    
+    // Laad tickets opnieuw
+    loadTickets();
+}
+
 // Tickets laden en tonen
 function loadTickets() {
     let tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
 
-    // Filteren op toegewezen aan
+    // Filteren op tab (automatisch op assigned_to)
+    tickets = tickets.filter(t => t.assigned_to === currentTab);
+
+    // Filteren op toegewezen aan (extra filter indien ingesteld)
     const assignedToFilter = document.getElementById('assignedtoFilter').value;
     if (assignedToFilter !== 'Iedereen') {
         tickets = tickets.filter(t => t.assigned_to === assignedToFilter);
@@ -101,7 +121,7 @@ function openCreateModal() {
     document.getElementById('newTicketTitle').value = '';
     document.getElementById('newTicketDescription').value = '';
     document.getElementById('newTicketStatus').value = 'Open';
-    document.getElementById('newTicketAssigned').value = 'Chris';
+    document.getElementById('newTicketAssigned').value = currentTab; // Set to current tab
     document.getElementById('createTicketModal').style.display = 'flex';
 }
 
