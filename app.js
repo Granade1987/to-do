@@ -343,9 +343,11 @@ function migrateTickets() {
 
 // --- SETTINGS MODAL FUNCTIES ---
 function openSettingsModal() {
+    console.log('🔓 Settings modal opening...');
     const token = localStorage.getItem('github_token') || '';
     document.getElementById('githubTokenInput').value = token;
     document.getElementById('settingsModal').style.display = 'flex';
+    console.log('✅ Settings modal opened');
 }
 
 function closeSettingsModal() {
