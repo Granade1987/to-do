@@ -216,15 +216,6 @@
     "closed_at": "\""
   },
   {
-    "id": 1770796588043,
-    "title": "Vervoerders uitzoeken",
-    "description": "Vervoerders uitzoeken",
-    "status": "In behandeling",
-    "assigned_to": "Chris",
-    "created_at": "2026-02-11T08:03:40.729Z",
-    "closed_at": null
-  },
-  {
     "id": 1770796588044,
     "title": "Plugins Wordpress",
     "description": "Heatmaps en Automatische banner wisseling",
