@@ -342,8 +342,22 @@ function migrateTickets() {
     let needsUpdate = false;
     
     tickets = tickets.map(ticket => {
+        // Zorg dat assigned_to altijd correct is
         if (!ticket.assigned_to) {
             ticket.assigned_to = 'Chris';
+            needsUpdate = true;
+        }
+        // Fix hoofdletter inconsistenties
+        if (ticket.assigned_to === 'CHRIS') {
+            ticket.assigned_to = 'Chris';
+            needsUpdate = true;
+        }
+        if (ticket.assigned_to === 'LUCA') {
+            ticket.assigned_to = 'Luca';
+            needsUpdate = true;
+        }
+        if (ticket.assigned_to === 'MICHELLE' || ticket.assigned_to === 'michelle') {
+            ticket.assigned_to = 'Michelle';
             needsUpdate = true;
         }
         return ticket;
@@ -351,6 +365,7 @@ function migrateTickets() {
     
     if (needsUpdate) {
         localStorage.setItem('tickets', JSON.stringify(tickets));
+        syncToGitHub();
     }
 }
 
