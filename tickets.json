@@ -268,5 +268,302 @@
     "assigned_to": "Luca",
     "created_at": "2026-02-12T08:42:05.346Z",
     "closed_at": null
+  },
+  {
+    "id": 1770885786361,
+    "title": "Deals pagina op MJFM",
+    "description": "Deals pagina maken zodoende menu item doorgelinkt wordt naar een pagina",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-09-29T08:16:09.560Z",
+    "closed_at": "2025-09-29T09:53:53.633Z"
+  },
+  {
+    "id": 1770885786365,
+    "title": "USP Afbeeldingen aanpassen",
+    "description": "In de producten categorie Truien USP foto aanpassen",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-09-29T13:57:29.334Z",
+    "closed_at": "2025-09-29T14:03:32.048Z"
+  },
+  {
+    "id": 1770885786366,
+    "title": "Superdry logo bij producten aanpassen",
+    "description": "Superdry logo bij producten aanpassen",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-09-29T13:58:13.925Z",
+    "closed_at": "2025-10-29T12:48:13.411Z"
+  },
+  {
+    "id": 1770885786367,
+    "title": "Ricardo mailtje airforce niet leverbaar",
+    "description": "Product per ongeluk online, kan niet geleverd worden: 100.00.1267",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-09-29T14:10:15.445Z",
+    "closed_at": "2025-09-30T06:06:36.383Z"
+  },
+  {
+    "id": 1770885786368,
+    "title": "Lookbook aanvullen",
+    "description": "Lookbook aanvullen",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-10-06T13:37:04.634Z",
+    "closed_at": "2025-10-08T10:34:18.350Z"
+  },
+  {
+    "id": 1770885786369,
+    "title": "Winkelstraat merken doornemen",
+    "description": "Winkelstraat merken doornemen en Channable aanvullen",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-10-08T09:03:30.635Z",
+    "closed_at": "2025-10-08T13:42:39.007Z"
+  },
+  {
+    "id": 1770885786370,
+    "title": "Mail van Jang Lok Hau opvolgen",
+    "description": "Voorraad aanzetten hellevoet",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-10-08T09:09:06.011Z",
+    "closed_at": "2025-10-27T07:57:22.006Z"
+  },
+  {
+    "id": 1770885786371,
+    "title": "Lijstje welke producten winkelstraat adverteren",
+    "description": "Lijstje welke producten winkelstraat adverteren met veel voorraad! Voorraadlijst delen met Maurice",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-10-16T09:09:38.696Z",
+    "closed_at": "2025-10-16T09:48:01.914Z"
+  },
+  {
+    "id": 1770885786372,
+    "title": "WS Stocklijst delen",
+    "description": "M1 stocklijst delen, alle producten M1 op winkelstraat!",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-10-16T09:13:25.990Z",
+    "closed_at": "2025-10-27T07:53:02.476Z"
+  },
+  {
+    "id": 1770885786373,
+    "title": "Voorpagina korting banners",
+    "description": "Aanpassen van de banners kortingen",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-10-27T07:59:54.303Z",
+    "closed_at": "2025-10-28T15:04:55.724Z"
+  },
+  {
+    "id": 1770885786378,
+    "title": "Deals pagina op MJFM",
+    "description": "Deals pagina maken zodoende menu item doorgelinkt wordt naar een pagina",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-09-29T08:16:09.560Z",
+    "closed_at": "2025-09-29T09:53:53.633Z"
+  },
+  {
+    "id": 1770885786382,
+    "title": "USP Afbeeldingen aanpassen",
+    "description": "In de producten categorie Truien USP foto aanpassen",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-09-29T13:57:29.334Z",
+    "closed_at": "2025-09-29T14:03:32.048Z"
+  },
+  {
+    "id": 1770885786383,
+    "title": "Superdry logo bij producten aanpassen",
+    "description": "Superdry logo bij producten aanpassen",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-09-29T13:58:13.925Z",
+    "closed_at": "2025-10-29T12:48:13.411Z"
+  },
+  {
+    "id": 1770885786384,
+    "title": "Ricardo mailtje airforce niet leverbaar",
+    "description": "Product per ongeluk online, kan niet geleverd worden: 100.00.1267",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-09-29T14:10:15.445Z",
+    "closed_at": "2025-09-30T06:06:36.383Z"
+  },
+  {
+    "id": 1770885786387,
+    "title": "Lookbook aanvullen",
+    "description": "Lookbook aanvullen",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-10-06T13:37:04.634Z",
+    "closed_at": "2025-10-08T10:34:18.350Z"
+  },
+  {
+    "id": 1770885786388,
+    "title": "Winkelstraat merken doornemen",
+    "description": "Winkelstraat merken doornemen en Channable aanvullen",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-10-08T09:03:30.635Z",
+    "closed_at": "2025-10-08T13:42:39.007Z"
+  },
+  {
+    "id": 1770885786389,
+    "title": "Mail van Jang Lok Hau opvolgen",
+    "description": "Voorraad aanzetten hellevoet",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-10-08T09:09:06.011Z",
+    "closed_at": "2025-10-27T07:57:22.006Z"
+  },
+  {
+    "id": 1770885786390,
+    "title": "Lijstje welke producten winkelstraat adverteren",
+    "description": "Lijstje welke producten winkelstraat adverteren met veel voorraad! Voorraadlijst delen met Maurice",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-10-16T09:09:38.696Z",
+    "closed_at": "2025-10-16T09:48:01.914Z"
+  },
+  {
+    "id": 1770885786391,
+    "title": "WS Stocklijst delen",
+    "description": "M1 stocklijst delen, alle producten M1 op winkelstraat!",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-10-16T09:13:25.990Z",
+    "closed_at": "2025-10-27T07:53:02.476Z"
+  },
+  {
+    "id": 1770885786393,
+    "title": "Voorpagina korting banners",
+    "description": "Aanpassen van de banners kortingen",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-10-27T07:59:54.303Z",
+    "closed_at": "2025-10-28T15:04:55.724Z"
+  },
+  {
+    "id": 1770885786396,
+    "title": "BF Uitgezonderd",
+    "description": "Malelions Croyez Peuterey Moose Knockels selectie Airforce Selectie",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-11-04T08:49:10.598Z",
+    "closed_at": "2025-11-10T08:48:11.131Z"
+  },
+  {
+    "id": 1770885786397,
+    "title": "Kortinglabels bovenaan ipv onderaan",
+    "description": "- Wanneer BF kortingslabel aanzet willen we die bovenaan hebben op de thumbnail. gecentreerd!",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-11-04T14:57:33.269Z",
+    "closed_at": "2025-11-13T11:39:35.220Z"
+  },
+  {
+    "id": 1770885786398,
+    "title": "Hello Retail infomreren",
+    "description": "Hello Retail informeren over Live Datum",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-11-06T07:08:14.008Z",
+    "closed_at": "2025-12-17T07:03:30.259Z"
+  },
+  {
+    "id": 1770885786399,
+    "title": "JorCustom toevoegen aan Outlet",
+    "description": "JorCustom toevoegen aan Outlet",
+    "status": "Gesloten",
+    "assigned_to": "Chris",
+    "created_at": "2025-11-26T15:10:55.630Z",
+    "closed_at": "2025-12-03T13:32:57.062Z"
+  },
+  {
+    "id": 1770885786402,
+    "title": "Vervoerders uitzoeken",
+    "description": "Vervoerders uitzoeken",
+    "status": "In behandeling",
+    "assigned_to": "Chris",
+    "created_at": "2026-02-11T08:03:40.729Z",
+    "closed_at": null
+  },
+  {
+    "id": 1770885786403,
+    "title": "Plugins Wordpress",
+    "description": "Heatmaps en Automatisch banner wisseling",
+    "status": "Open",
+    "assigned_to": "Chris",
+    "created_at": "2026-02-11T08:04:02.730Z",
+    "closed_at": null
+  },
+  {
+    "id": 1770885786404,
+    "title": "Outlet doorlopen en updaten",
+    "description": "Outlet doorlopen en updaten",
+    "status": "Open",
+    "assigned_to": "Chris",
+    "created_at": "2026-02-11T08:04:30.749Z",
+    "closed_at": null
+  },
+  {
+    "id": 1770885786405,
+    "title": "Lookerstudio Hello Retail",
+    "description": "In kaart brengen van de data",
+    "status": "Open",
+    "assigned_to": "Chris",
+    "created_at": "2026-02-11T08:05:55.459Z",
+    "closed_at": null
+  },
+  {
+    "id": 1770885786406,
+    "title": "OUTLET : Nieuwe banner",
+    "description": "Hoofdpagina Banner aanpassen",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-02-12T07:30:33.776Z",
+    "closed_at": null
+  },
+  {
+    "id": 1770885786414,
+    "title": "OUTLET : Drop down menu foto collectie",
+    "description": "Aanpassen drop down menu foto collectie",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-02-12T07:47:54.842Z",
+    "closed_at": null
+  },
+  {
+    "id": 1770885786415,
+    "title": "OUTLET : Over Outlet foto",
+    "description": "Over de outlet foto aanpassen",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-02-12T07:48:50.508Z",
+    "closed_at": null
+  },
+  {
+    "id": 1770885786416,
+    "title": "OULET : Fotobanner merken pagina",
+    "description": "Baner merken aanpassen",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-02-12T07:53:33.230Z",
+    "closed_at": null
+  },
+  {
+    "id": 1770885786417,
+    "title": "OUTLET : Contact foto aanpassen",
+    "description": " contact  foto aanpassen",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-02-12T07:54:12.758Z",
+    "closed_at": null
   }
 ]
