@@ -304,5 +304,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-02-12T07:54:12.758Z",
     "closed_at": null
+  },
+  {
+    "id": 1770902879687,
+    "title": "OUTLET : platte ad Meta",
+    "description": "Advertentie nieuwe drop outlet\n1080x1920\n-1:1 ratio: 1440 x 1440 pixels Facebook\n-4:5 ratio: 1440 x 1800 pixels",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-02-12T13:27:59.687Z",
+    "closed_at": null
   }
 ]
