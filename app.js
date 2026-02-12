@@ -21,7 +21,6 @@ function loadTickets() {
     let tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
 
     // 1. FILTER OP PERSOON - Alleen tickets van de huidige actieve tab tonen
-    // We filteren direct zodat "Extern" ook automatisch verdwijnt uit de weergave
     tickets = tickets.filter(t => t.assigned_to === currentTab);
     
     // 2. Filteren op status
@@ -76,8 +75,6 @@ async function syncToGitHub() {
     if (!GITHUB_TOKEN) return;
 
     let tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
-    
-    // Verwijder 'Extern' definitief uit de backup als dat gewenst is
     const filteredTickets = tickets.filter(t => t.assigned_to !== 'Extern');
 
     try {
@@ -110,7 +107,7 @@ async function syncToGitHub() {
     }
 }
 
-// --- INITIALISATIE (DATA OPHALEN BIJ START) ---
+// --- INITIALISATIE ---
 async function initializeApp() {
     const GITHUB_TOKEN = localStorage.getItem('github_token');
 
@@ -118,7 +115,7 @@ async function initializeApp() {
         try {
             const res = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
                 headers: { 'Authorization': `token ${GITHUB_TOKEN}` },
-                cache: "no-store" // Zorg dat we altijd de nieuwste versie pakken
+                cache: "no-store"
             });
             if (res.ok) {
                 const data = await res.json();
@@ -135,7 +132,66 @@ async function initializeApp() {
     loadTickets();
 }
 
-// --- MODAL FUNCTIES ---
+// --- EXPORT / IMPORT FUNCTIES ---
+function exportTicketsToCSV() {
+    let tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
+    if (!tickets.length) return alert('Geen tickets om te exporteren.');
+
+    const header = ['Titel', 'Beschrijving', 'Status', 'Toegewezen aan', 'Aangemaakt', 'Gesloten'];
+    const rows = tickets.map(t => [
+        `"${(t.title || '').replace(/"/g, '""')}"`,
+        `"${(t.description || '').replace(/"/g, '""')}"`,
+        `"${t.status}"`,
+        `"${t.assigned_to || ''}"`,
+        `"${t.created_at}"`,
+        `"${t.closed_at || ''}"`
+    ].join(','));
+    
+    const csvContent = [header.join(','), ...rows].join('\r\n');
+    const blob = new Blob([csvContent], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `tickets_backup_${new Date().toISOString().slice(0,10)}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
+
+function importTicketsFromCSV(file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const text = e.target.result;
+        const lines = text.split(/\r?\n/).filter(Boolean);
+        if (lines.length < 2) return alert('Geen geldige CSV.');
+
+        const newTickets = [];
+        for (let i = 1; i < lines.length; i++) {
+            const cols = lines[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/); // Split op komma maar negeer die tussen quotes
+            if (cols.length < 6) continue;
+
+            newTickets.push({
+                id: Date.now() + i,
+                title: cols[0].replace(/"/g, ''),
+                description: cols[1].replace(/"/g, ''),
+                status: cols[2].replace(/"/g, ''),
+                assigned_to: cols[3].replace(/"/g, ''),
+                created_at: cols[4].replace(/"/g, ''),
+                closed_at: cols[5].replace(/"/g, '') || null
+            });
+        }
+        
+        let existing = JSON.parse(localStorage.getItem('tickets') || '[]');
+        localStorage.setItem('tickets', JSON.stringify([...existing, ...newTickets]));
+        
+        syncToGitHub();
+        loadTickets();
+        alert('Tickets succesvol geïmporteerd en gesynchroniseerd!');
+    };
+    reader.readAsText(file);
+}
+
+// --- OVERIGE FUNCTIES (MODALS & HELPERS) ---
 function openCreateModal() {
     document.getElementById('newTicketTitle').value = '';
     document.getElementById('newTicketDescription').value = '';
@@ -189,9 +245,7 @@ function openTicketModal(id) {
     document.getElementById('ticketModal').style.display = 'flex';
 }
 
-function closeModal() {
-    document.getElementById('ticketModal').style.display = 'none';
-}
+function closeModal() { document.getElementById('ticketModal').style.display = 'none'; }
 
 function updateStatusFromModal() {
     const id = parseInt(document.getElementById('modalTicketId').value);
@@ -229,12 +283,9 @@ function deleteTicket(id) {
 
 function deleteTicketFromModal() {
     const id = parseInt(document.getElementById('modalTicketId').value);
-    if (confirm('Weet je zeker dat je dit ticket wilt verwijderen?')) {
-        deleteTicket(id);
-    }
+    if (confirm('Weet je zeker dat je dit ticket wilt verwijderen?')) deleteTicket(id);
 }
 
-// --- HELPERS ---
 function applyStatusColors() {
     const rows = document.querySelectorAll('#ticketList tr');
     rows.forEach(row => {
@@ -256,16 +307,13 @@ function migrateTickets() {
     if (needsUpdate) localStorage.setItem('tickets', JSON.stringify(tickets));
 }
 
-// --- SETTINGS ---
 function openSettingsModal() {
     const token = localStorage.getItem('github_token') || '';
     document.getElementById('githubTokenInput').value = token;
     document.getElementById('settingsModal').style.display = 'flex';
 }
 
-function closeSettingsModal() {
-    document.getElementById('settingsModal').style.display = 'none';
-}
+function closeSettingsModal() { document.getElementById('settingsModal').style.display = 'none'; }
 
 function saveGithubToken() {
     const token = document.getElementById('githubTokenInput').value.trim();
@@ -279,7 +327,7 @@ function saveGithubToken() {
 document.addEventListener('DOMContentLoaded', () => {
     initializeApp();
     
-    // Dark mode
+    // Dark mode logic
     const darkModeToggle = document.getElementById('darkModeToggle');
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
@@ -289,14 +337,20 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', newTheme);
     });
 
-    // Buttons
+    // Button Listeners
     document.getElementById('createTicketBtn').addEventListener('click', openCreateModal);
     document.getElementById('settingsBtn').addEventListener('click', openSettingsModal);
     document.getElementById('statusFilter').addEventListener('change', loadTickets);
     document.getElementById('sortFilter').addEventListener('change', loadTickets);
+    document.getElementById('exportCsvBtn').addEventListener('click', exportTicketsToCSV);
+    document.getElementById('importCsvInput').addEventListener('change', function(e) {
+        if (e.target.files.length) {
+            importTicketsFromCSV(e.target.files[0]);
+            e.target.value = ''; // Reset
+        }
+    });
 });
 
-// Klik buiten modal sluit deze
 window.onclick = (event) => {
     if (event.target.className === 'modal') {
         closeModal();
