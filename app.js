@@ -19,13 +19,14 @@ function switchTab(tab) {
 function loadTickets() {
     let tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
 
-    // GEEN FILTER OP PERSOON - iedereen ziet alle tickets
+    // FILTER OP PERSOON - Alleen tickets van de huidige actieve tab tonen
+    tickets = tickets.filter(t => t.assigned_to === currentTab);
     
-    // Filteren op status
+    // Filteren op status (bestaande code)
     const statusFilter = document.getElementById('statusFilter').value;
     tickets = tickets.filter(t => (statusFilter === 'Alle' || t.status === statusFilter));
 
-    // Sorteren
+    // ... rest van de sorteer logica en tabel vullen blijft hetzelfde ...
    const sortFilter = document.getElementById('sortFilter') ? document.getElementById('sortFilter').value : 'status';
     if (sortFilter === 'created_at') {
         tickets.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
