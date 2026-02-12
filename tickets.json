@@ -259,14 +259,5 @@
     "assigned_to": "Chris",
     "created_at": "2026-02-11T09:24:02.883Z",
     "closed_at": null
-  },
-  {
-    "id": 1770885459794,
-    "title": "miawu",
-    "description": "t",
-    "status": "Open",
-    "assigned_to": "Luca",
-    "created_at": "2026-02-12T08:37:39.794Z",
-    "closed_at": null
   }
 ]
