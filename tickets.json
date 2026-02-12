@@ -126,15 +126,6 @@
     "closed_at": "2025-10-16T09:48:01.914Z"
   },
   {
-    "id": 1770796588032,
-    "title": "WS Stocklijst delen",
-    "description": "M1 stocklijst delen, alle producten M1 op winkelstraat!",
-    "status": "Gesloten",
-    "assigned_to": "Chris",
-    "created_at": "2025-10-16T09:13:25.990Z",
-    "closed_at": "2025-10-27T07:53:02.476Z"
-  },
-  {
     "id": 1770796588033,
     "title": "Uitzoeken PickList for WooCommerce",
     "description": "https://woocommerce.com/nl/products/picklist/",
