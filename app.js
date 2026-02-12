@@ -395,26 +395,33 @@ function saveGithubToken() {
     closeSettingsModal();
 }
 
-// Laad tickets uit tickets.json of localStorage
 async function initializeApp() {
-    // Eerst kijken of localStorage tickets heeft
-    let existingTickets = localStorage.getItem('tickets');
-    
-    if (!existingTickets || existingTickets === '[]') {
-        // Probeer uit tickets.json te laden
+    const GITHUB_TOKEN = localStorage.getItem('github_token');
+    const REPO_OWNER = 'Granade1987';
+    const REPO_NAME = 'to-do';
+    const FILE_PATH = 'tickets.json';
+
+    if (GITHUB_TOKEN) {
         try {
-            const response = await fetch('tickets.json');
-            if (response.ok) {
-                const ticketsFromFile = await response.json();
-                if (ticketsFromFile.length > 0) {
-                    localStorage.setItem('tickets', JSON.stringify(ticketsFromFile));
-                    console.log('✅ Tickets hersteld uit tickets.json');
-                }
+            const res = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
+                headers: { 'Authorization': `token ${GITHUB_TOKEN}` }
+            });
+            if (res.ok) {
+                const data = await res.json();
+                const ticketsFromGit = JSON.parse(decodeURIComponent(escape(atob(data.content))));
+                
+                // Sla de tickets van Git op in je lokale browser
+                localStorage.setItem('tickets', JSON.stringify(ticketsFromGit));
+                console.log('✅ Tickets succesvol opgehaald van GitHub');
             }
         } catch (error) {
-            console.log('📝 Geen tickets.json gevonden, start met lege lijst');
+            console.error('❌ Fout bij ophalen GitHub data:', error);
         }
     }
+
+    migrateTickets();
+    loadTickets();
+}
     
     // Start de app
     migrateTickets();
