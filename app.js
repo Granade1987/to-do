@@ -19,9 +19,8 @@ function switchTab(tab) {
 function loadTickets() {
     let tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
 
-    // Filteren op huidge tab - ALTIJD alleen tickets van huidge persoon tonen
-    tickets = tickets.filter(t => t.assigned_to === currentTab);
-
+    // GEEN FILTER OP PERSOON - iedereen ziet alle tickets
+    
     // Filteren op status
     const statusFilter = document.getElementById('statusFilter').value;
     tickets = tickets.filter(t => (statusFilter === 'Alle' || t.status === statusFilter));
