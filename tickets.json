@@ -246,7 +246,7 @@
     "id": 1770885786404,
     "title": "Outlet doorlopen en updaten",
     "description": "Outlet doorlopen en updaten",
-    "status": "In behandeling",
+    "status": "Open",
     "assigned_to": "Chris",
     "created_at": "2026-02-11T08:04:30.749Z",
     "closed_at": null
@@ -318,9 +318,9 @@
     "id": 1770904854124,
     "title": "VALENTIJNS email banner",
     "description": "1200x60",
-    "status": "Open",
+    "status": "Gesloten",
     "assigned_to": "Luca",
     "created_at": "2026-02-12T14:00:54.124Z",
-    "closed_at": null
+    "closed_at": "2026-02-12T15:10:55.961Z"
   }
 ]
