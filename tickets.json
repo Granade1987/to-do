@@ -385,5 +385,14 @@
     "assigned_to": "Chris",
     "created_at": "2026-02-18T10:24:26.374Z",
     "closed_at": null
+  },
+  {
+    "id": 1771411591968,
+    "title": "Tijdelijke deals voorwaarden",
+    "description": "Op de pagina",
+    "status": "Open",
+    "assigned_to": "Chris",
+    "created_at": "2026-02-18T10:46:31.968Z",
+    "closed_at": null
   }
 ]
