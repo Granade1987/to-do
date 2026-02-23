@@ -394,5 +394,14 @@
     "assigned_to": "Chris",
     "created_at": "2026-02-18T10:46:31.968Z",
     "closed_at": null
+  },
+  {
+    "id": 1771836926817,
+    "title": "hoi",
+    "description": "",
+    "status": "Open",
+    "assigned_to": "Chris",
+    "created_at": "2026-02-23T08:55:26.817Z",
+    "closed_at": null
   }
 ]
