@@ -394,5 +394,14 @@
     "assigned_to": "Chris",
     "created_at": "2026-02-18T10:46:31.968Z",
     "closed_at": null
+  },
+  {
+    "id": 1772544468725,
+    "title": "3 luik mauricio",
+    "description": "",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-03-03T13:27:48.725Z",
+    "closed_at": null
   }
 ]
