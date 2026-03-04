@@ -412,5 +412,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-03-04T13:03:35.678Z",
     "closed_at": null
+  },
+  {
+    "id": 1772635525370,
+    "title": "Winkel Pagina restylen",
+    "description": "https://mikesjustformen.nl/winkels/barendrecht/",
+    "status": "Open",
+    "assigned_to": "Chris",
+    "created_at": "2026-03-04T14:45:25.370Z",
+    "closed_at": null
   }
 ]
