@@ -403,5 +403,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-03-03T13:27:48.725Z",
     "closed_at": null
+  },
+  {
+    "id": 1772629415678,
+    "title": "Nieuwe FB banner",
+    "description": "MFJM Incl openingstijden",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-03-04T13:03:35.678Z",
+    "closed_at": null
   }
 ]
