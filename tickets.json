@@ -430,5 +430,14 @@
     "assigned_to": "Chris",
     "created_at": "2026-03-10T08:40:34.116Z",
     "closed_at": null
+  },
+  {
+    "id": 1773132050415,
+    "title": "Vacature barendrecht van website",
+    "description": "",
+    "status": "Open",
+    "assigned_to": "Chris",
+    "created_at": "2026-03-10T08:40:50.415Z",
+    "closed_at": null
   }
 ]
