@@ -421,5 +421,14 @@
     "assigned_to": "Chris",
     "created_at": "2026-03-04T14:45:25.370Z",
     "closed_at": "2026-03-05T14:47:47.446Z"
+  },
+  {
+    "id": 1773132034116,
+    "title": "Nieuwe blog aanmaken",
+    "description": "https://docs.google.com/document/d/12f0LKszHtZDArpsEpO1p1tqq3DpMCHwsNBNZYtlfzk4/edit?usp=sharing\n\nde laatste moet er op",
+    "status": "Open",
+    "assigned_to": "Chris",
+    "created_at": "2026-03-10T08:40:34.116Z",
+    "closed_at": null
   }
 ]
