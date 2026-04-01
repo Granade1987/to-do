@@ -363,46 +363,46 @@
     "id": 1773749377398,
     "title": "MJFM - Pasen Actie",
     "description": "Pop - Up\nKortingscode aanmaken\nGratis verzenden",
-    "status": "Gesloten",
+    "status": "Open",
     "assigned_to": "Chris",
     "created_at": "2026-03-17T12:09:37.398Z",
-    "closed_at": "2026-04-01T12:03:36.358Z"
+    "closed_at": null
   },
   {
     "id": 1773749419399,
     "title": "OUTLET - Pasen Actie",
     "description": "Pop - Up\nCode aanmaken\n10% korting",
-    "status": "Gesloten",
+    "status": "Open",
     "assigned_to": "Chris",
     "created_at": "2026-03-17T12:10:19.399Z",
-    "closed_at": "2026-04-01T13:29:04.741Z"
+    "closed_at": null
   },
   {
     "id": 1774347070123,
     "title": "Jeans Actie Pasen",
     "description": "2e paar Jeans halve prijs, story en Borden\nAlleen in de winkels, goedkoopste broek geld\n+gratis riem van 29,99 ( 190.10.0027 )\n\n\" Paasweekend bij mikes \"",
-    "status": "In behandeling",
+    "status": "Gesloten",
     "assigned_to": "Luca",
     "created_at": "2026-03-24T10:11:10.123Z",
-    "closed_at": null
+    "closed_at": "2026-04-01T07:56:04.280Z"
   },
   {
     "id": 1774347604550,
     "title": "Pasen Gratis Verzenden MJFM",
     "description": "3-6 april pop up + story",
-    "status": "Open",
+    "status": "Gesloten",
     "assigned_to": "Luca",
     "created_at": "2026-03-24T10:20:04.550Z",
-    "closed_at": null
+    "closed_at": "2026-04-01T11:50:58.628Z"
   },
   {
     "id": 1774347655941,
     "title": "Pasen 10% OUTLET",
     "description": "10% korting voor de OUTLET",
-    "status": "Open",
+    "status": "Gesloten",
     "assigned_to": "Luca",
     "created_at": "2026-03-24T10:20:55.941Z",
-    "closed_at": null
+    "closed_at": "2026-04-01T12:44:03.890Z"
   },
   {
     "id": 1774348178588,
@@ -421,5 +421,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-03-25T08:03:43.642Z",
     "closed_at": "2026-03-25T13:52:03.178Z"
+  },
+  {
+    "id": 1775051655977,
+    "title": "story Pasen gratis verzending MJFM",
+    "description": "",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-04-01T13:54:15.977Z",
+    "closed_at": null
   }
 ]
