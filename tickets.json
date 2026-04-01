@@ -430,5 +430,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-04-01T13:54:15.977Z",
     "closed_at": null
+  },
+  {
+    "id": 1775051677668,
+    "title": "Story en Post Outlet",
+    "description": "",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-04-01T13:54:37.668Z",
+    "closed_at": null
   }
 ]
