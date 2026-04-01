@@ -363,10 +363,10 @@
     "id": 1773749377398,
     "title": "MJFM - Pasen Actie",
     "description": "Pop - Up\nKortingscode aanmaken\nGratis verzenden",
-    "status": "Open",
+    "status": "Gesloten",
     "assigned_to": "Chris",
     "created_at": "2026-03-17T12:09:37.398Z",
-    "closed_at": null
+    "closed_at": "2026-04-01T12:03:36.358Z"
   },
   {
     "id": 1773749419399,
@@ -381,19 +381,19 @@
     "id": 1774347070123,
     "title": "Jeans Actie Pasen",
     "description": "2e paar Jeans halve prijs, story en Borden\nAlleen in de winkels, goedkoopste broek geld\n+gratis riem van 29,99 ( 190.10.0027 )\n\n\" Paasweekend bij mikes \"",
-    "status": "Gesloten",
+    "status": "In behandeling",
     "assigned_to": "Luca",
     "created_at": "2026-03-24T10:11:10.123Z",
-    "closed_at": "2026-04-01T07:56:04.280Z"
+    "closed_at": null
   },
   {
     "id": 1774347604550,
     "title": "Pasen Gratis Verzenden MJFM",
     "description": "3-6 april pop up + story",
-    "status": "Gesloten",
+    "status": "Open",
     "assigned_to": "Luca",
     "created_at": "2026-03-24T10:20:04.550Z",
-    "closed_at": "2026-04-01T11:50:58.628Z"
+    "closed_at": null
   },
   {
     "id": 1774347655941,
