@@ -439,5 +439,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-04-01T13:54:37.668Z",
     "closed_at": null
+  },
+  {
+    "id": 1775210150349,
+    "title": "Blackstone van outlet",
+    "description": "komt geen voorraad van",
+    "status": "Open",
+    "assigned_to": "Chris",
+    "created_at": "2026-04-03T09:55:50.349Z",
+    "closed_at": null
   }
 ]
