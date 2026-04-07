@@ -475,5 +475,14 @@
     "assigned_to": "Chris",
     "created_at": "2026-04-07T07:39:37.780Z",
     "closed_at": null
+  },
+  {
+    "id": 1775547718608,
+    "title": "Voorraad indicator winkelvoorraad",
+    "description": "Voorraad indicator winkelvoorraad overnadenken",
+    "status": "Open",
+    "assigned_to": "Chris",
+    "created_at": "2026-04-07T07:41:58.608Z",
+    "closed_at": null
   }
 ]
