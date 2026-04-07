@@ -444,10 +444,10 @@
     "id": 1775210150349,
     "title": "Blackstone van outlet",
     "description": "komt geen voorraad van",
-    "status": "Open",
+    "status": "Gesloten",
     "assigned_to": "Chris",
     "created_at": "2026-04-03T09:55:50.349Z",
-    "closed_at": null
+    "closed_at": "2026-04-07T07:35:17.969Z"
   },
   {
     "id": 1775547311755,
