@@ -520,5 +520,14 @@
     "assigned_to": "Chris",
     "created_at": "2026-04-07T07:49:56.025Z",
     "closed_at": null
+  },
+  {
+    "id": 1775725910981,
+    "title": "Orderbevestiging verzenden met code toevoegen",
+    "description": "Orderbevestiging verzenden met code toevoegen",
+    "status": "Open",
+    "assigned_to": "Chris",
+    "created_at": "2026-04-09T09:11:50.981Z",
+    "closed_at": null
   }
 ]
