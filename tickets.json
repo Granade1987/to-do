@@ -529,5 +529,14 @@
     "assigned_to": "Chris",
     "created_at": "2026-04-09T09:11:50.981Z",
     "closed_at": null
+  },
+  {
+    "id": 1775731679316,
+    "title": "Koningsdag",
+    "description": "Koningsdag. \n20% korting op alles behalve deals acties.  Zowel online als offline \n\nMike s outlet -15% op alles die dag",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-04-09T10:47:59.316Z",
+    "closed_at": null
   }
 ]
