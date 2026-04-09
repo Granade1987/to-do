@@ -426,19 +426,19 @@
     "id": 1775051655977,
     "title": "story Pasen gratis verzending MJFM",
     "description": "",
-    "status": "Gesloten",
+    "status": "In behandeling",
     "assigned_to": "Luca",
     "created_at": "2026-04-01T13:54:15.977Z",
-    "closed_at": "2026-04-09T10:47:40.072Z"
+    "closed_at": null
   },
   {
     "id": 1775051677668,
     "title": "Story en Post pasen Outlet",
     "description": "",
-    "status": "Gesloten",
+    "status": "Open",
     "assigned_to": "Luca",
     "created_at": "2026-04-01T13:54:37.668Z",
-    "closed_at": "2026-04-09T10:47:44.093Z"
+    "closed_at": null
   },
   {
     "id": 1775210150349,
@@ -525,18 +525,9 @@
     "id": 1775725910981,
     "title": "Orderbevestiging verzenden met code toevoegen",
     "description": "Orderbevestiging verzenden met code toevoegen",
-    "status": "Open",
+    "status": "Gesloten",
     "assigned_to": "Chris",
     "created_at": "2026-04-09T09:11:50.981Z",
-    "closed_at": null
-  },
-  {
-    "id": 1775731679316,
-    "title": "Koningsdag",
-    "description": "Koningsdag. \n20% korting op alles behalve deals acties.  Zowel online als offline \n\nMike s outlet -15% op alles die dag",
-    "status": "Open",
-    "assigned_to": "Luca",
-    "created_at": "2026-04-09T10:47:59.316Z",
-    "closed_at": null
+    "closed_at": "2026-04-09T13:00:22.721Z"
   }
 ]
