@@ -182,19 +182,20 @@
             <p style="font-size: 12px; color: #888; margin-bottom: 10px;">
                 Je tickets worden automatisch gesynchroniseerd met GitHub. Voer je GitHub token in.
             </p>
-            <div class="modal-field">
-                <label class="modal-label">GitHub Personal Access Token:</label>
-                <input id="githubTokenInput" type="password" placeholder="github_pat_..." class="modal-input">
-            </div>
-            <div style="font-size: 11px; color: #666; margin: 10px 0;">
-                💡 <a href="https://github.com/settings/tokens" target="_blank" style="color: #0066cc;">Maak een token aan op GitHub</a> 
-                (scope: repo)
-            </div>
-        </div>
-        
-        <div class="modal-actions">
-            <button onclick="saveGithubToken()" class="btn btn-primary">Opslaan</button>
-            <button onclick="closeSettingsModal()" class="btn btn-secondary">Annuleren</button>
+            <form id="githubTokenForm" onsubmit="saveGithubToken(); return false;">
+                <div class="modal-field">
+                    <label class="modal-label">GitHub Personal Access Token:</label>
+                    <input id="githubTokenInput" type="password" placeholder="github_pat_..." class="modal-input">
+                </div>
+                <div style="font-size: 11px; color: #666; margin: 10px 0;">
+                    💡 <a href="https://github.com/settings/tokens" target="_blank" style="color: #0066cc;">Maak een token aan op GitHub</a> 
+                    (scope: repo)
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-primary">Opslaan</button>
+                    <button type="button" onclick="closeSettingsModal()" class="btn btn-secondary">Annuleren</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
