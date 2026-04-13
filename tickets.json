@@ -538,5 +538,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-04-13T06:23:31.727Z",
     "closed_at": null
+  },
+  {
+    "id": 1776067031285,
+    "title": "test",
+    "description": "test",
+    "status": "Open",
+    "assigned_to": "Chris",
+    "created_at": "2026-04-13T07:57:11.285Z",
+    "closed_at": null
   }
 ]
