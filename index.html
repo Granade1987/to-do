@@ -174,15 +174,14 @@
 <!-- Settings Modal -->
 <div id="settingsModal" class="modal" style="display: none;">
     <div class="modal-content">
-        <button class="modal-close" onclick="closeSettingsModal()">×</button>
+        <button type="button" class="modal-close" onclick="closeSettingsModal()">×</button>
         <h2>Instellingen</h2>
-        
-        <div class="modal-section">
-            <h3>GitHub Sync</h3>
-            <p style="font-size: 12px; color: #888; margin-bottom: 10px;">
-                Je tickets worden automatisch gesynchroniseerd met GitHub. Voer je GitHub token in.
-            </p>
-            <form id="githubTokenForm" onsubmit="saveGithubToken(); return false;">
+        <form id="githubTokenForm" onsubmit="saveGithubToken(); return false;">
+            <div class="modal-section">
+                <h3>GitHub Sync</h3>
+                <p style="font-size: 12px; color: #888; margin-bottom: 10px;">
+                    Je tickets worden automatisch gesynchroniseerd met GitHub. Voer je GitHub token in.
+                </p>
                 <div class="modal-field">
                     <label class="modal-label">GitHub Personal Access Token:</label>
                     <input id="githubTokenInput" name="github_token" type="password" autocomplete="current-password" placeholder="github_pat_..." class="modal-input">
@@ -195,8 +194,8 @@
                     <button type="submit" class="btn btn-primary">Opslaan</button>
                     <button type="button" onclick="closeSettingsModal()" class="btn btn-secondary">Annuleren</button>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 </div>
 
