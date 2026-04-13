@@ -462,10 +462,10 @@
     "id": 1775547541124,
     "title": "Betalen afrekenen button kleur veranderen?",
     "description": "Betalen afrekenen button kleur veranderen?",
-    "status": "Gesloten",
+    "status": "Open",
     "assigned_to": "Chris",
     "created_at": "2026-04-07T07:39:01.124Z",
-    "closed_at": "2026-04-13T11:12:45.938Z"
+    "closed_at": null
   },
   {
     "id": 1775547577780,
@@ -529,14 +529,5 @@
     "assigned_to": "Chris",
     "created_at": "2026-04-09T09:11:50.981Z",
     "closed_at": "2026-04-09T13:00:22.721Z"
-  },
-  {
-    "id": 1776061411727,
-    "title": "loser",
-    "description": "",
-    "status": "Open",
-    "assigned_to": "Luca",
-    "created_at": "2026-04-13T06:23:31.727Z",
-    "closed_at": null
   }
 ]
