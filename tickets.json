@@ -547,5 +547,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-04-16T06:28:24.376Z",
     "closed_at": null
+  },
+  {
+    "id": 1776320946042,
+    "title": "Koningsdag : Outlet 15%",
+    "description": "Socials post 15% korting op de outlet",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-04-16T06:29:06.042Z",
+    "closed_at": null
   }
 ]
