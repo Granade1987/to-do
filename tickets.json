@@ -538,5 +538,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-04-16T06:26:02.277Z",
     "closed_at": null
+  },
+  {
+    "id": 1776320904376,
+    "title": "Online",
+    "description": "20% korting op alles uitgezonderd peuterey Moose en de deals",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-04-16T06:28:24.376Z",
+    "closed_at": null
   }
 ]
