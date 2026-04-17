@@ -556,5 +556,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-04-16T06:29:06.042Z",
     "closed_at": null
+  },
+  {
+    "id": 1776405932999,
+    "title": "EK Pool maken",
+    "description": "",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-04-17T06:05:32.999Z",
+    "closed_at": null
   }
 ]
