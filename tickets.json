@@ -601,5 +601,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-04-28T09:40:52.548Z",
     "closed_at": null
+  },
+  {
+    "id": 1777900115570,
+    "title": "POS : 15 % korting op paddy's",
+    "description": "geen foto toevoegen.",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-05-04T13:08:35.570Z",
+    "closed_at": null
   }
 ]
