@@ -610,5 +610,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-05-04T13:08:35.570Z",
     "closed_at": null
+  },
+  {
+    "id": 1777963435731,
+    "title": "Lyle en scott oranje WK",
+    "description": "",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-05-05T06:43:55.731Z",
+    "closed_at": null
   }
 ]
