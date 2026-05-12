@@ -646,5 +646,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-05-12T08:33:32.867Z",
     "closed_at": null
+  },
+  {
+    "id": 1778574826550,
+    "title": "Best sellers",
+    "description": "banner met best sellers",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-05-12T08:33:46.550Z",
+    "closed_at": null
   }
 ]
