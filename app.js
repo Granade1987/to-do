@@ -70,24 +70,44 @@ const REPO_OWNER = 'Granade1987';
 const REPO_NAME = 'to-do';
 const FILE_PATH = 'tickets.json';
 
+function mergeTickets(localTickets, remoteTickets) {
+    const merged = new Map();
+    remoteTickets.forEach(ticket => merged.set(ticket.id, ticket));
+    localTickets.forEach(ticket => merged.set(ticket.id, ticket));
+    return Array.from(merged.values()).sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+}
+
+async function fetchRemoteTickets() {
+    const GITHUB_TOKEN = localStorage.getItem('github_token');
+    if (!GITHUB_TOKEN) return { tickets: [], sha: null };
+
+    const res = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
+        headers: { 'Authorization': `token ${GITHUB_TOKEN}` }
+    });
+
+    if (!res.ok) return { tickets: [], sha: null };
+
+    const data = await res.json();
+    const fileContent = decodeURIComponent(escape(atob(data.content)));
+    const tickets = JSON.parse(fileContent || '[]');
+    return { tickets, sha: data.sha };
+}
+
 async function syncToGitHub() {
     const GITHUB_TOKEN = localStorage.getItem('github_token');
     if (!GITHUB_TOKEN) return;
 
-    let tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
-    const filteredTickets = tickets.filter(t => t.assigned_to !== 'Extern');
+    let localTickets = JSON.parse(localStorage.getItem('tickets') || '[]');
+    const remoteData = await fetchRemoteTickets();
+    const remoteTickets = remoteData.tickets || [];
+    const sha = remoteData.sha;
+
+    const filteredLocal = localTickets.filter(t => t.assigned_to !== 'Extern');
+    const mergedTickets = mergeTickets(filteredLocal, remoteTickets);
+
+    localStorage.setItem('tickets', JSON.stringify(mergedTickets));
 
     try {
-        let sha = "";
-        const getRes = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
-            headers: { 'Authorization': `token ${GITHUB_TOKEN}` }
-        });
-        
-        if (getRes.ok) {
-            const fileData = await getRes.json();
-            sha = fileData.sha;
-        }
-
         const putRes = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
             method: 'PUT',
             headers: {
@@ -96,14 +116,19 @@ async function syncToGitHub() {
             },
             body: JSON.stringify({
                 message: `Ticket backup: ${new Date().toLocaleString('nl-NL')}`,
-                content: btoa(unescape(encodeURIComponent(JSON.stringify(filteredTickets, null, 2)))),
-                sha: sha !== "" ? sha : undefined
+                content: btoa(unescape(encodeURIComponent(JSON.stringify(mergedTickets, null, 2)))),
+                sha: sha || undefined
             })
         });
 
-        if (putRes.ok) console.log("✅ Synchronisatie geslaagd");
+        if (putRes.ok) {
+            console.log('✅ Synchronisatie geslaagd');
+        } else {
+            const errorData = await putRes.json();
+            console.error('❌ GitHub Sync Fout:', errorData);
+        }
     } catch (error) {
-        console.error("❌ GitHub Sync Fout:", error);
+        console.error('❌ GitHub Sync Fout:', error);
     }
 }
 
