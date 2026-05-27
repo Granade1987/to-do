@@ -736,5 +736,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-05-27T11:12:55.615Z",
     "closed_at": null
+  },
+  {
+    "id": 1779881268342,
+    "title": "kofferactie Banner",
+    "description": "",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-05-27T11:27:48.342Z",
+    "closed_at": null
   }
 ]
