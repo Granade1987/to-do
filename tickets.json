@@ -754,5 +754,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-05-27T11:33:15.775Z",
     "closed_at": null
+  },
+  {
+    "id": 1779882104925,
+    "title": "BASKETBALL WRONG FRIENDS",
+    "description": "5 juni 13:00 breda",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-05-27T11:41:44.925Z",
+    "closed_at": null
   }
 ]
