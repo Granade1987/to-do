@@ -763,5 +763,23 @@
     "assigned_to": "Luca",
     "created_at": "2026-05-27T11:41:44.925Z",
     "closed_at": null
+  },
+  {
+    "id": 1779882525273,
+    "title": "Vakantiegeld",
+    "description": "leuke post",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-05-27T11:48:45.273Z",
+    "closed_at": null
+  },
+  {
+    "id": 1779884079276,
+    "title": "Pure Path Shorts promo",
+    "description": "151.30.0194\n151.10.0034\n151.30.0195\n\nNIET DE HONEYCOMB ( zwart kan )\nDobby mint",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-05-27T12:14:39.276Z",
+    "closed_at": null
   }
 ]
