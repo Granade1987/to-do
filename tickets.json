@@ -718,5 +718,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-05-26T12:12:56.809Z",
     "closed_at": null
+  },
+  {
+    "id": 1779879467432,
+    "title": "Zomerfoto Banner MJFM",
+    "description": "",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-05-27T10:57:47.432Z",
+    "closed_at": null
   }
 ]
