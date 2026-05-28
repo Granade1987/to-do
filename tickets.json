@@ -606,10 +606,10 @@
     "id": 1777900115570,
     "title": "POS : 15 % korting op paddy's",
     "description": "geen foto toevoegen. grote poster met grote letters.",
-    "status": "Gesloten",
+    "status": "Open",
     "assigned_to": "Luca",
     "created_at": "2026-05-04T13:08:35.570Z",
-    "closed_at": "2026-05-28T11:16:55.293Z"
+    "closed_at": null
   },
   {
     "id": 1777963435731,
@@ -693,84 +693,30 @@
     "closed_at": "2026-05-22T11:04:16.628Z"
   },
   {
+    "id": 1779433612340,
+    "title": "Chris banner formaten",
+    "description": "",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-05-22T07:06:52.340Z",
+    "closed_at": null
+  },
+  {
     "id": 1779795151392,
     "title": "Sendcloud regels instellen",
     "description": ".",
-    "status": "In behandeling",
+    "status": "Gesloten",
     "assigned_to": "Chris",
     "created_at": "2026-05-26T11:32:31.392Z",
-    "closed_at": null
+    "closed_at": "2026-05-27T12:52:55.234Z"
   },
   {
-    "id": 1779797576809,
-    "title": "Aandacht Outlet",
-    "description": "180.70.0026x\n180.60.0030x\n180.30.0184x\n151.20.0045x\n151.30.0178-\n151.30.0142x\n151.81.0006 -\n151.20.0055 -\n151.40.0017 -\n158.10.0004-\n158.81.0002 -\n158.30.0002\n158.81.0001\n100.00.1179\n100.30.1168\n100.10.1236\n100.10.1604\n155.30.0204",
+    "id": 1779968901330,
+    "title": "Menu optimalizeren op laptop",
+    "description": "Niet mogelijk naar beneden te scrollen op kleinere schermen menu te diep",
     "status": "In behandeling",
-    "assigned_to": "Luca",
-    "created_at": "2026-05-26T12:12:56.809Z",
-    "closed_at": null
-  },
-  {
-    "id": 1779879467432,
-    "title": "Zomerfoto Banner MJFM",
-    "description": "NIEUWE FOTO",
-    "status": "Open",
-    "assigned_to": "Luca",
-    "created_at": "2026-05-27T10:57:47.432Z",
-    "closed_at": null
-  },
-  {
-    "id": 1779880375615,
-    "title": "VOORSTELLEN PLANNINGEN",
-    "description": "Zelf voorstellen naar feestdagen, inblijven plannen en vragen naar Quater meeting",
-    "status": "Open",
-    "assigned_to": "Luca",
-    "created_at": "2026-05-27T11:12:55.615Z",
-    "closed_at": null
-  },
-  {
-    "id": 1779881268342,
-    "title": "kofferactie Banner",
-    "description": "",
-    "status": "Gesloten",
-    "assigned_to": "Luca",
-    "created_at": "2026-05-27T11:27:48.342Z",
-    "closed_at": "2026-05-28T09:30:11.210Z"
-  },
-  {
-    "id": 1779881595775,
-    "title": "Kofferactie pop up",
-    "description": "om te laten weten dat ze automatisch kans maken op de malelions Kofferacite 804,93",
-    "status": "Gesloten",
-    "assigned_to": "Luca",
-    "created_at": "2026-05-27T11:33:15.775Z",
-    "closed_at": "2026-05-28T09:30:05.750Z"
-  },
-  {
-    "id": 1779882104925,
-    "title": "BASKETBALL WRONG FRIENDS",
-    "description": "5 juni 13:00 breda\nMikes kleding ophalen",
-    "status": "Open",
-    "assigned_to": "Luca",
-    "created_at": "2026-05-27T11:41:44.925Z",
-    "closed_at": null
-  },
-  {
-    "id": 1779882525273,
-    "title": "Vakantiegeld",
-    "description": "leuke post",
-    "status": "Open",
-    "assigned_to": "Luca",
-    "created_at": "2026-05-27T11:48:45.273Z",
-    "closed_at": null
-  },
-  {
-    "id": 1779884079276,
-    "title": "Pure Path Shorts promo",
-    "description": "151.30.0194\n151.10.0034\n151.30.0195\n\nNIET DE HONEYCOMB ( zwart kan )\nDobby mint",
-    "status": "Open",
-    "assigned_to": "Luca",
-    "created_at": "2026-05-27T12:14:39.276Z",
+    "assigned_to": "Chris",
+    "created_at": "2026-05-28T11:48:21.330Z",
     "closed_at": null
   }
 ]
