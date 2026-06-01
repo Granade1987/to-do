@@ -720,6 +720,15 @@
     "closed_at": null
   },
   {
+    "id": 1779880375615,
+    "title": "VOORSTELLEN PLANNINGEN",
+    "description": "Zelf voorstellen naar feestdagen, inblijven plannen en vragen naar Quater meeting",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-05-27T11:12:55.615Z",
+    "closed_at": null
+  },
+  {
     "id": 1779881268342,
     "title": "kofferactie Banner",
     "description": "",
@@ -750,10 +759,10 @@
     "id": 1779882525273,
     "title": "Vakantiegeld",
     "description": "leuke post",
-    "status": "Gesloten",
+    "status": "Open",
     "assigned_to": "Luca",
     "created_at": "2026-05-27T11:48:45.273Z",
-    "closed_at": "2026-06-01T11:18:10.885Z"
+    "closed_at": null
   },
   {
     "id": 1779884079276,
@@ -765,12 +774,12 @@
     "closed_at": null
   },
   {
-    "id": 1780311149975,
-    "title": "Weekend offenders aanbieding?",
-    "description": "",
+    "id": 1780314362594,
+    "title": "META doornemen",
+    "description": "Analyse",
     "status": "Open",
-    "assigned_to": "Luca",
-    "created_at": "2026-06-01T10:52:29.975Z",
+    "assigned_to": "Chris",
+    "created_at": "2026-06-01T11:46:02.594Z",
     "closed_at": null
   }
 ]
