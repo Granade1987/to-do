@@ -808,5 +808,14 @@
     "assigned_to": "Chris",
     "created_at": "2026-06-01T11:49:17.574Z",
     "closed_at": null
+  },
+  {
+    "id": 1780314691538,
+    "title": "Photoshop script overzetten",
+    "description": "Vanaf laptop michelle naar mijn laptop",
+    "status": "Open",
+    "assigned_to": "Chris",
+    "created_at": "2026-06-01T11:51:31.538Z",
+    "closed_at": null
   }
 ]
