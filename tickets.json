@@ -790,5 +790,14 @@
     "assigned_to": "Chris",
     "created_at": "2026-06-01T11:46:21.885Z",
     "closed_at": null
+  },
+  {
+    "id": 1780314396009,
+    "title": "Banners naar duo banner aanpassen",
+    "description": "",
+    "status": "Open",
+    "assigned_to": "Chris",
+    "created_at": "2026-06-01T11:46:36.009Z",
+    "closed_at": null
   }
 ]
