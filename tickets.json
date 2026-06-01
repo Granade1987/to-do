@@ -772,5 +772,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-05-27T12:14:39.276Z",
     "closed_at": null
+  },
+  {
+    "id": 1780311149975,
+    "title": "Weekend offenders aanbieding?",
+    "description": "",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-06-01T10:52:29.975Z",
+    "closed_at": null
   }
 ]
