@@ -817,5 +817,14 @@
     "assigned_to": "Chris",
     "created_at": "2026-06-01T11:51:31.538Z",
     "closed_at": "2026-06-02T07:30:32.860Z"
+  },
+  {
+    "id": 1780385573766,
+    "title": "Herroepingsrecht pagina maken",
+    "description": "Herroepingsrecht pagina maken",
+    "status": "In behandeling",
+    "assigned_to": "Chris",
+    "created_at": "2026-06-02T07:32:53.766Z",
+    "closed_at": null
   }
 ]
