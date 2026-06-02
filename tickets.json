@@ -826,5 +826,14 @@
     "assigned_to": "Chris",
     "created_at": "2026-06-02T07:32:53.766Z",
     "closed_at": null
+  },
+  {
+    "id": 1780385685559,
+    "title": "OUTLET Herroepingsrecht pagina maken",
+    "description": "Herroepingsrecht pagina maken",
+    "status": "Open",
+    "assigned_to": "Chris",
+    "created_at": "2026-06-02T07:34:45.559Z",
+    "closed_at": null
   }
 ]
