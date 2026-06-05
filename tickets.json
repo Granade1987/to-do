@@ -862,5 +862,14 @@
     "assigned_to": "Chris",
     "created_at": "2026-06-04T09:04:03.950Z",
     "closed_at": null
+  },
+  {
+    "id": 1780646384989,
+    "title": "Lacoste ZWB bundel actie",
+    "description": "129.99 euro 3 shirts",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-06-05T07:59:44.989Z",
+    "closed_at": null
   }
 ]
