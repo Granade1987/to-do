@@ -759,10 +759,10 @@
     "id": 1779882525273,
     "title": "Vakantiegeld",
     "description": "leuke post",
-    "status": "Open",
+    "status": "Gesloten",
     "assigned_to": "Luca",
     "created_at": "2026-05-27T11:48:45.273Z",
-    "closed_at": null
+    "closed_at": "2026-06-09T14:12:18.895Z"
   },
   {
     "id": 1779884079276,
