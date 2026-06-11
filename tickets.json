@@ -880,5 +880,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-06-09T08:03:02.627Z",
     "closed_at": "2026-06-09T14:05:29.156Z"
+  },
+  {
+    "id": 1781160928235,
+    "title": "Banner Outlet Gekkenhuis",
+    "description": "15% korting op alles\nwoensdag tot vrijdag",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-06-11T06:55:28.235Z",
+    "closed_at": null
   }
 ]
