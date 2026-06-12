@@ -453,10 +453,10 @@
     "id": 1775547311755,
     "title": "Zoom op iphone bij zoeken",
     "description": "Zoom op iphone bij zoeken",
-    "status": "Open",
+    "status": "Gesloten",
     "assigned_to": "Chris",
     "created_at": "2026-04-07T07:35:11.755Z",
-    "closed_at": null
+    "closed_at": "2026-06-12T09:49:58.108Z"
   },
   {
     "id": 1775547541124,
@@ -880,14 +880,5 @@
     "assigned_to": "Luca",
     "created_at": "2026-06-09T08:03:02.627Z",
     "closed_at": "2026-06-09T14:05:29.156Z"
-  },
-  {
-    "id": 1781249642095,
-    "title": "Vaderdag actie",
-    "description": "Zwarte omgeving spotlight vanaf boven. gratis verzending : VADERDAG",
-    "status": "Open",
-    "assigned_to": "Luca",
-    "created_at": "2026-06-12T07:34:02.095Z",
-    "closed_at": null
   }
 ]
