@@ -876,9 +876,9 @@
     "id": 1781522526887,
     "title": "Brasserie post",
     "description": "Post dat Mike met de outlet voor Barendrecht staat.",
-    "status": "Open",
+    "status": "Gesloten",
     "assigned_to": "Luca",
     "created_at": "2026-06-15T11:22:06.887Z",
-    "closed_at": null
+    "closed_at": "2026-06-17T08:54:32.633Z"
   }
 ]
