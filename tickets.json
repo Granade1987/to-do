@@ -907,5 +907,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-07-14T07:06:54.560Z",
     "closed_at": null
+  },
+  {
+    "id": 1784012848143,
+    "title": "SALE poster winkels",
+    "description": "50%",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-07-14T07:07:28.143Z",
+    "closed_at": null
   }
 ]
