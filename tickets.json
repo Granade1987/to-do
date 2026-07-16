@@ -831,10 +831,10 @@
     "id": 1780563782537,
     "title": "populaire producten naar beneden in categorieen",
     "description": "Hello retail populaire porducten naar beneden tussen de producten",
-    "status": "Open",
+    "status": "Gesloten",
     "assigned_to": "Chris",
     "created_at": "2026-06-04T09:03:02.537Z",
-    "closed_at": null
+    "closed_at": "2026-07-16T09:12:22.912Z"
   },
   {
     "id": 1780563843950,
@@ -894,36 +894,9 @@
     "id": 1783579681837,
     "title": "Post Outlet extra sale",
     "description": "",
-    "status": "Gesloten",
+    "status": "Open",
     "assigned_to": "Luca",
     "created_at": "2026-07-09T06:48:01.837Z",
-    "closed_at": "2026-07-16T07:10:38.748Z"
-  },
-  {
-    "id": 1784012814560,
-    "title": "POS Boss en Lacoste",
-    "description": "Alloeen logo met prijs boss combineren met paddy en passengers",
-    "status": "Gesloten",
-    "assigned_to": "Luca",
-    "created_at": "2026-07-14T07:06:54.560Z",
-    "closed_at": "2026-07-16T07:10:29.928Z"
-  },
-  {
-    "id": 1784012848143,
-    "title": "SALE poster winkels",
-    "description": "50%",
-    "status": "Gesloten",
-    "assigned_to": "Luca",
-    "created_at": "2026-07-14T07:07:28.143Z",
-    "closed_at": "2026-07-16T07:10:42.721Z"
-  },
-  {
-    "id": 1784096758123,
-    "title": "Meer buiten foto's toevoegen",
-    "description": "Google Drive",
-    "status": "Gesloten",
-    "assigned_to": "Luca",
-    "created_at": "2026-07-15T06:25:58.123Z",
-    "closed_at": "2026-07-16T07:10:48.314Z"
+    "closed_at": null
   }
 ]
