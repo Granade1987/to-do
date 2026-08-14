@@ -916,5 +916,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-07-16T12:41:53.799Z",
     "closed_at": null
+  },
+  {
+    "id": 1786688206132,
+    "title": "True Religion lookbook",
+    "description": "",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-08-14T06:16:46.132Z",
+    "closed_at": null
   }
 ]
