@@ -934,5 +934,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-08-17T11:22:53.499Z",
     "closed_at": null
+  },
+  {
+    "id": 1786965913515,
+    "title": "OUTLET meerdere posts",
+    "description": "",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-08-17T11:25:13.515Z",
+    "closed_at": null
   }
 ]
