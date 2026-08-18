@@ -952,5 +952,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-08-18T11:48:07.475Z",
     "closed_at": null
+  },
+  {
+    "id": 1787055231311,
+    "title": "MIKES OUTLET",
+    "description": "ONZE merken banner aanpassen",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-08-18T12:13:51.311Z",
+    "closed_at": null
   }
 ]
