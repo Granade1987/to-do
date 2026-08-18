@@ -943,5 +943,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-08-17T11:25:13.515Z",
     "closed_at": null
+  },
+  {
+    "id": 1787053687475,
+    "title": "Outlet wat koop je met 100 euro",
+    "description": "video/foto's",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-08-18T11:48:07.475Z",
+    "closed_at": null
   }
 ]
