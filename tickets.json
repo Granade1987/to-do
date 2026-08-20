@@ -961,5 +961,14 @@
     "assigned_to": "Luca",
     "created_at": "2026-08-18T12:13:51.311Z",
     "closed_at": null
+  },
+  {
+    "id": 1787216319104,
+    "title": "Outlet AD nieuwe collectie.",
+    "description": "",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-08-20T08:58:39.104Z",
+    "closed_at": null
   }
 ]
