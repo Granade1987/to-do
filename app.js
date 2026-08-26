@@ -327,10 +327,16 @@ function migrateTickets() {
     let needsUpdate = false;
     tickets = tickets.map(t => {
         if (!t.assigned_to) { t.assigned_to = 'Chris'; needsUpdate = true; }
-        if (t.assigned_to.toLowerCase() === 'michelle') { t.assigned_to = 'Fiona'; needsUpdate = true; }
+        if (typeof t.assigned_to === 'string' && t.assigned_to.trim().toLowerCase() === 'michelle') {
+            t.assigned_to = 'Fiona';
+            needsUpdate = true;
+        }
         return t;
     });
-    if (needsUpdate) localStorage.setItem('tickets', JSON.stringify(tickets));
+    if (needsUpdate) {
+        localStorage.setItem('tickets', JSON.stringify(tickets));
+        if (localStorage.getItem('github_token')) syncToGitHub();
+    }
 }
 
 function openSettingsModal() {
