@@ -100,6 +100,13 @@ function mergeTickets(localTickets, remoteTickets) {
     return Array.from(merged.values()).sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 }
 
+function normalizeTicketList(tickets) {
+    return tickets.map(ticket => ({
+        ...ticket,
+        assigned_to: normalizeAssignee(ticket.assigned_to)
+    }));
+}
+
 async function fetchRemoteTickets() {
     const GITHUB_TOKEN = localStorage.getItem('github_token');
     if (!GITHUB_TOKEN) return { tickets: [], sha: null };
@@ -168,7 +175,8 @@ async function initializeApp() {
             if (res.ok) {
                 const data = await res.json();
                 const ticketsFromGit = JSON.parse(decodeURIComponent(escape(atob(data.content))));
-                localStorage.setItem('tickets', JSON.stringify(ticketsFromGit));
+                const normalizedTickets = normalizeTicketList(ticketsFromGit);
+                localStorage.setItem('tickets', JSON.stringify(normalizedTickets));
                 console.log('✅ Nieuwste data opgehaald van GitHub');
             }
         } catch (error) {
@@ -176,6 +184,13 @@ async function initializeApp() {
         }
     }
 
+    const storedTickets = JSON.parse(localStorage.getItem('tickets') || '[]');
+    const normalizedStored = normalizeTicketList(storedTickets);
+    if (JSON.stringify(storedTickets) !== JSON.stringify(normalizedStored)) {
+        localStorage.setItem('tickets', JSON.stringify(normalizedStored));
+    }
+
+    currentTab = normalizeAssignee(currentTab);
     migrateTickets();
     loadTickets();
 }
