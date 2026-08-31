@@ -42,7 +42,7 @@ function loadTickets() {
     let tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
 
     // 1. FILTER OP PERSOON - Alleen tickets van de huidige actieve tab tonen
-    tickets = tickets.filter(t => t.assigned_to === currentTab);
+    tickets = tickets.filter(t => normalizeAssignee(t.assigned_to) === currentTab);
     
     // 2. Filteren op status
     const statusFilter = document.getElementById('statusFilter').value;
@@ -352,7 +352,7 @@ function migrateTickets() {
         const original = t.assigned_to;
         const normalized = normalizeAssignee(original);
 
-        if (original !== normalized) {
+        if (String(original ?? '').trim() !== normalized) {
             t.assigned_to = normalized;
             needsUpdate = true;
         }
