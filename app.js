@@ -1,15 +1,36 @@
+const VALID_ASSIGNEES = ['Chris', 'Luca', 'Fiona'];
+
+function normalizeAssignee(value) {
+    if (value === null || value === undefined) return 'Chris';
+
+    const normalized = String(value).trim();
+    if (!normalized) return 'Chris';
+
+    const aliasMap = {
+        'michelle': 'Fiona',
+        'michele': 'Fiona',
+        'michèle': 'Fiona',
+        'fiona': 'Fiona',
+        'luca': 'Luca',
+        'chris': 'Chris'
+    };
+
+    const lower = normalized.toLowerCase();
+    return aliasMap[lower] || (VALID_ASSIGNEES.includes(normalized) ? normalized : 'Chris');
+}
+
 // Huidige tab
 let currentTab = 'Chris';
 
 // Tab wisselen
 function switchTab(tab) {
-    currentTab = tab;
+    currentTab = normalizeAssignee(tab);
     
     // Maak alle tabs inactief
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
     
     // Maak de geselecteerde tab actief
-    const activeBtn = document.querySelector(`[data-tab="${tab}"]`);
+    const activeBtn = document.querySelector(`[data-tab="${currentTab}"]`);
     if (activeBtn) activeBtn.classList.add('active');
     
     // Laad tickets opnieuw
@@ -50,12 +71,14 @@ function loadTickets() {
         const tr = document.createElement('tr');
         tr.style.cursor = 'pointer';
         tr.onclick = () => openTicketModal(ticket.id);
+
+        const assignedName = normalizeAssignee(ticket.assigned_to);
         
         tr.innerHTML = `
             <td>${ticket.title}</td>
             <td class="description-cell">${ticket.description.substring(0, 100)}${ticket.description.length > 100 ? '...' : ''}</td>
             <td>${ticket.status}</td>
-            <td>${ticket.assigned_to || 'Chris'}</td>
+            <td>${assignedName}</td>
             <td>${new Date(ticket.created_at).toLocaleString('nl-NL')}</td>
             <td>${ticket.closed_at ? new Date(ticket.closed_at).toLocaleString('nl-NL') : '-'}</td>
         `;
@@ -233,7 +256,7 @@ function saveNewTicket() {
     const title = document.getElementById('newTicketTitle').value.trim();
     const description = document.getElementById('newTicketDescription').value.trim();
     const status = document.getElementById('newTicketStatus').value;
-    const assigned_to = document.getElementById('newTicketAssigned').value;
+    const assigned_to = normalizeAssignee(document.getElementById('newTicketAssigned').value);
 
     if (!title) return alert('Titel is verplicht');
 
@@ -263,7 +286,7 @@ function openTicketModal(id) {
     document.getElementById('modalTitle').value = ticket.title;
     document.getElementById('modalDescription').value = ticket.description;
     document.getElementById('modalStatus').value = ticket.status;
-    document.getElementById('modalAssigned').value = ticket.assigned_to || 'Chris';
+    document.getElementById('modalAssigned').value = normalizeAssignee(ticket.assigned_to);
     document.getElementById('modalCreated').textContent = new Date(ticket.created_at).toLocaleString('nl-NL');
     document.getElementById('modalClosed').textContent = ticket.closed_at ? new Date(ticket.closed_at).toLocaleString('nl-NL') : '-';
 
@@ -277,7 +300,7 @@ function updateStatusFromModal() {
     const newStatus = document.getElementById('modalStatus').value;
     const newTitle = document.getElementById('modalTitle').value.trim();
     const newDescription = document.getElementById('modalDescription').value.trim();
-    const newAssigned = document.getElementById('modalAssigned').value;
+    const newAssigned = normalizeAssignee(document.getElementById('modalAssigned').value);
 
     let tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
     tickets = tickets.map(t => {
@@ -326,11 +349,14 @@ function migrateTickets() {
     let tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
     let needsUpdate = false;
     tickets = tickets.map(t => {
-        if (!t.assigned_to) { t.assigned_to = 'Chris'; needsUpdate = true; }
-        if (typeof t.assigned_to === 'string' && t.assigned_to.trim().toLowerCase() === 'Fiona') {
-            t.assigned_to = 'Fiona';
+        const original = t.assigned_to;
+        const normalized = normalizeAssignee(original);
+
+        if (original !== normalized) {
+            t.assigned_to = normalized;
             needsUpdate = true;
         }
+
         return t;
     });
     if (needsUpdate) {
