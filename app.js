@@ -1,4 +1,4 @@
-const VALID_ASSIGNEES = ['Chris', 'Luca', 'Fiona', 'Marketing'];
+const VALID_ASSIGNEES = ['Chris', 'Luca', 'Fiona'];
 
 function normalizeAssignee(value) {
     if (value === null || value === undefined) return 'Chris';
@@ -12,9 +12,7 @@ function normalizeAssignee(value) {
         'michèle': 'Fiona',
         'fiona': 'Fiona',
         'luca': 'Luca',
-        'chris': 'Chris',
-        'marketing': 'Marketing',
-        'markteing': 'Marketing'
+        'chris': 'Chris'
     };
 
     const lower = normalized.toLowerCase();
