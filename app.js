@@ -384,8 +384,10 @@ function migrateTickets() {
 
 function openSettingsModal() {
     const token = localStorage.getItem('github_token') || '';
-    document.getElementById('githubTokenInput').value = token;
+    const githubTokenInput = document.getElementById('githubTokenInput');
+    githubTokenInput.value = token;
     document.getElementById('settingsModal').style.display = 'flex';
+    setTimeout(() => githubTokenInput.focus(), 50);
 }
 
 function closeSettingsModal() { document.getElementById('settingsModal').style.display = 'none'; }
