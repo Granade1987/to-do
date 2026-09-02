@@ -1,5 +1,14 @@
 [
   {
+    "id": 1788348703881,
+    "title": "banner maken voor de mail",
+    "description": "laatste kans?",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-09-02T11:31:43.881Z",
+    "closed_at": null
+  },
+  {
     "id": 1788348683794,
     "title": "E-mail laatste dag",
     "description": "email maken laatste dag / weekend voor winkel laatste kans shoppen met extra voordeel",
