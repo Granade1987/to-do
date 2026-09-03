@@ -37,12 +37,12 @@
   },
   {
     "id": 1788348683794,
-    "title": "E-mail laatste dag",
+    "title": "E-mail laatste weekend",
     "description": "email maken laatste dag / weekend voor winkel laatste kans shoppen met extra voordeel",
-    "status": "Open",
+    "status": "Gesloten",
     "assigned_to": "Fiona",
     "created_at": "2026-09-02T11:31:23.794Z",
-    "closed_at": null
+    "closed_at": "2026-09-03T06:23:28.890Z"
   },
   {
     "id": 1788253159116,
