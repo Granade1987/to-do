@@ -46,12 +46,12 @@
   },
   {
     "id": 1788348683794,
-    "title": "E-mail laatste weekend",
+    "title": "E-mail laatste dag",
     "description": "email maken laatste dag / weekend voor winkel laatste kans shoppen met extra voordeel",
-    "status": "Gesloten",
+    "status": "Open",
     "assigned_to": "Fiona",
     "created_at": "2026-09-02T11:31:23.794Z",
-    "closed_at": "2026-09-03T06:23:28.890Z"
+    "closed_at": null
   },
   {
     "id": 1788253159116,
@@ -138,10 +138,10 @@
     "id": 1786965773499,
     "title": "3 Halen 2 Betalen Einde sale",
     "description": "Aan het einde van de sale\nAlle sale items 3 halen = 2 betalen\nPOS materiaal Posters + borden\nGoedkoopste product is free,\nfinal sale geen ruilen\n1 sept",
-    "status": "In behandeling",
+    "status": "Gesloten",
     "assigned_to": "Luca",
     "created_at": "2026-08-17T11:22:53.499Z",
-    "closed_at": null
+    "closed_at": "2026-09-03T10:59:09.091Z"
   },
   {
     "id": 1786965628650,
