@@ -1,5 +1,14 @@
 [
   {
+    "id": 1788415560304,
+    "title": "Productinformatie toevoegen",
+    "description": "voor deze merken:\nvoor de meest bekende producten (kwaliteitsproducten).\nmoose knuckles\npeutery\nfred perry\nlacoste\nboss",
+    "status": "Open",
+    "assigned_to": "Fiona",
+    "created_at": "2026-09-03T06:06:00.304Z",
+    "closed_at": null
+  },
+  {
     "id": 1788357805027,
     "title": "foto's toevoegen",
     "description": "laatste toegevoegd : 140.20.0099\nAirforce jakka 05 Gun metal",
