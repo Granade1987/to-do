@@ -1,5 +1,14 @@
 [
   {
+    "id": 1788951873034,
+    "title": "Meta Ad",
+    "description": "winterjas\nSweaters\nHoodies\nkorte videos ( 5 tot 10 sec )",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-09-09T11:04:33.034Z",
+    "closed_at": null
+  },
+  {
     "id": 1788771321323,
     "title": "Banner e-mails",
     "description": "Voornamelijk banners per merk voor de automatiseringmails:\n-Ma.strum\n\nen nieuwere product foto's voor de shop link knoppen in de mails (neem Ma.strum als voorbeeld).",
