@@ -1,5 +1,14 @@
 [
   {
+    "id": 1789464681312,
+    "title": "petrol knitware",
+    "description": "Petrol kinitware(alleen de 39eu truitjes) truitjes 39,99 ps\ntwee voor 69,99",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-09-15T09:31:21.312Z",
+    "closed_at": null
+  },
+  {
     "id": 1789369382195,
     "title": "Profielfoto META aanpassen",
     "description": "",
