@@ -1,5 +1,14 @@
 [
   {
+    "id": 1789565933769,
+    "title": "Studio aanpassen",
+    "description": "",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-09-16T13:38:53.769Z",
+    "closed_at": null
+  },
+  {
     "id": 1789542561617,
     "title": "OUTLET NALOPEN",
     "description": "items nalopen en foto's maken voor outlet",
@@ -92,11 +101,11 @@
   {
     "id": 1788415560304,
     "title": "Productinformatie toevoegen",
-    "description": "voor categorie:\nwinterjassen\nsoftshells\nzomerjasjes\nbodywarmers",
-    "status": "Gesloten",
+    "description": "voor deze merken:\nvoor de meest bekende producten (kwaliteitsproducten).\nmoose knuckles\npeutery\nfred perry\nlacoste\nboss",
+    "status": "Open",
     "assigned_to": "Fiona",
     "created_at": "2026-09-03T06:06:00.304Z",
-    "closed_at": "2026-09-16T13:23:15.448Z"
+    "closed_at": null
   },
   {
     "id": 1788357805027,
