@@ -1,5 +1,14 @@
 [
   {
+    "id": 1789542375386,
+    "title": "OUTLET : video",
+    "description": "Winterjassen\nhoodies van wrong friend groot volume 50 eu",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-09-16T07:06:15.386Z",
+    "closed_at": null
+  },
+  {
     "id": 1789464681312,
     "title": "petrol knitware",
     "description": "Petrol kinitware(alleen de 39eu truitjes) truitjes 39,99 ps\ntwee voor 69,99",
@@ -74,7 +83,7 @@
   {
     "id": 1788415560304,
     "title": "Productinformatie toevoegen",
-    "description": "voor categorie:\nwinterjassen\nsoftshells\nzomerjasjes",
+    "description": "voor deze merken:\nvoor de meest bekende producten (kwaliteitsproducten).\nmoose knuckles\npeutery\nfred perry\nlacoste\nboss",
     "status": "Open",
     "assigned_to": "Fiona",
     "created_at": "2026-09-03T06:06:00.304Z",
