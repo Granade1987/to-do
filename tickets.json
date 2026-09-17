@@ -1,5 +1,14 @@
 [
   {
+    "id": 1789635762849,
+    "title": "product info toevoegen",
+    "description": "product info toevoegen aan de nieuwe collectie.\n\nper merk of per categorie.\n\nvesten, hoodies, sweaters.\n\nmateriaal, beschrijving, hoe draag je dit, wasvoorschriften, opvallende dingen zoals; ritssluiting, logo's, etc.",
+    "status": "Open",
+    "assigned_to": "Fiona",
+    "created_at": "2026-09-17T09:02:42.849Z",
+    "closed_at": null
+  },
+  {
     "id": 1789567440684,
     "title": "OUTLET MAIL 15%",
     "description": "KASSA KORTING hele weekend -15%",
