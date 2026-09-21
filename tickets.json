@@ -1,5 +1,14 @@
 [
   {
+    "id": 1789983348719,
+    "title": "email marketing voorbereiden",
+    "description": "E-mails voorbereiden voor toekomstige events/acties/gebeurtenissen.\n-nieuwe merken bij mikes.\n-regenachtig weer.\n-winterjassen.\n-blackfriday.\n-comfy fitje uitkomst van gta6.\n-sinterklaas\netc...",
+    "status": "Open",
+    "assigned_to": "Fiona",
+    "created_at": "2026-09-21T09:35:48.719Z",
+    "closed_at": null
+  },
+  {
     "id": 1789983140956,
     "title": "klant data achterhalen",
     "description": "data uit emails en uit website halen.\nwaar klikken klanten het meest/minst?",
