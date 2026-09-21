@@ -1,5 +1,14 @@
 [
   {
+    "id": 1789983140956,
+    "title": "klant data achterhalen",
+    "description": "data uit emails en uit website halen.\nwaar klikken klanten het meest/minst?",
+    "status": "Open",
+    "assigned_to": "Fiona",
+    "created_at": "2026-09-21T09:32:20.956Z",
+    "closed_at": null
+  },
+  {
     "id": 1789635762849,
     "title": "product info toevoegen",
     "description": "product info toevoegen aan de nieuwe collectie.\n\nper merk of per categorie.\n\nvesten, hoodies, sweaters.\n\nmateriaal, beschrijving, hoe draag je dit, wasvoorschriften, opvallende dingen zoals; ritssluiting, logo's, etc.",
