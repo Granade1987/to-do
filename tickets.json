@@ -1,5 +1,14 @@
 [
   {
+    "id": 1790057493599,
+    "title": "vragen aan chris stellen",
+    "description": "chris vragen welk programma waarvoor is en aantekeningen maken, zo kan ik het beste de programma's leren kennen en eigen maken.",
+    "status": "Open",
+    "assigned_to": "Fiona",
+    "created_at": "2026-09-22T06:11:33.599Z",
+    "closed_at": null
+  },
+  {
     "id": 1789983348719,
     "title": "email marketing voorbereiden",
     "description": "E-mails voorbereiden voor toekomstige events/acties/gebeurtenissen.\n-nieuwe merken bij mikes.\n-dierendag.\n-regenachtig weer.\n-winterjassen.\n-blackfriday.\n-comfy fitje uitkomst van gta6.\n-sinterklaas\netc...",
