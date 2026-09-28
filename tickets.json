@@ -1,5 +1,14 @@
 [
   {
+    "id": 1790578797794,
+    "title": "Mail 3 okt 06:00 uur verzenden",
+    "description": "Mail voor outlet:\n- Tommy pakken met hoodies.\n- Pure Path winterjassen.\n- Veel voorraad uitlichten.",
+    "status": "Open",
+    "assigned_to": "Fiona",
+    "created_at": "2026-09-28T06:59:57.794Z",
+    "closed_at": null
+  },
+  {
     "id": 1790578668579,
     "title": "Mail 1 okt 17:00 uur verzenden",
     "description": "MIKES JUST FOR MEN MAIL.\n-Details to follow.",
