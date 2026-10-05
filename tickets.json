@@ -1,5 +1,14 @@
 [
   {
+    "id": 1791181016914,
+    "title": "Banner Outlet",
+    "description": "alle boss passengers en paddy zijn 49,99",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-10-05T06:16:56.914Z",
+    "closed_at": null
+  },
+  {
     "id": 1790683274876,
     "title": "meer weten over black banana's",
     "description": "schrijf een google document vol met meer weten info over black banana's. neem hierbij andere merken zoals hugo boss op de website als voorbeeld",
