@@ -1,5 +1,14 @@
 [
   {
+    "id": 1793268428869,
+    "title": "BLACK WEEK",
+    "description": "20% korting vrijdag 20 nov tot 29 nov\n27 nov 10% extra bovenop de 20%",
+    "status": "Open",
+    "assigned_to": "Luca",
+    "created_at": "2026-10-29T10:07:08.869Z",
+    "closed_at": null
+  },
+  {
     "id": 1792144734755,
     "title": "Muchachomalo + Garag",
     "description": "Zelfde stijl op tijdelijke deals",
