@@ -327,10 +327,10 @@
     "id": 1789542561617,
     "title": "OUTLET NALOPEN",
     "description": "items nalopen en foto's maken voor outlet",
-    "status": "Open",
+    "status": "Gesloten",
     "assigned_to": "Luca",
     "created_at": "2026-09-16T07:09:21.617Z",
-    "closed_at": null
+    "closed_at": "2026-11-16T13:15:46.708Z"
   },
   {
     "id": 1789542375386,
